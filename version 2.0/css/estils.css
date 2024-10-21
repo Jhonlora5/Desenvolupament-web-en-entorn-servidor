@@ -1,0 +1,258 @@
+/* Jonathan Lopez Ramos */
+/* Estils generals */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/img/tienda.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Contenidor del formulari */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 800px; /* Amplada fixa */
+    margin: 40px auto; /* Centrat horitzontal amb auto */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    clear: both; /* Per assegurar que no s'encavalqui res a sobre */
+}
+
+/*Estils de títols*/
+h1, h2, h4 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/*Formulari*/
+form {
+    width: 100%; /* 100% de l'amplada del contenidor */
+    margin: 0 auto; /* Centrat */
+    clear: both; /* Evitar interferències */
+}
+
+label {
+    display: block; /* Força a cada label a ocupar una línia */
+    margin-top: 10px;
+}
+
+input[type="text"], textarea {
+    width: 95%; /* Aproximadament tota l'amplada del contenidor */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    float: none; /* Assegura que no hi hagi flotació aquí */
+}
+
+.enviardades{
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 98%; /* Ajusta l'amplada segons el contingut */
+    clear: both;
+}
+
+.enviardades:hover {
+    background-color: #218838;
+}
+
+/* Estils de la taula */
+table {
+    width: 100%; /* Ocupa tot l'ample */
+    border-collapse: collapse;
+    margin-top: 20px;
+    float: none; /* Taula sense flotació */
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.missatge-error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+    float: none;
+}
+
+/* CSS per assegurar que els botons de paginació estiguin alineats correctament en una sola línia */
+.paginacio {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.paginacio form {
+    display: inline-block;
+    text-align: center; /* Centra els botons dins del formulari */
+    white-space: nowrap; /* Manté els botons en una sola línia */
+}
+
+.paginacio button {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 3px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    vertical-align: middle; /* Alineació vertical dels botons */
+}
+
+.paginacio button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.paginacio button:hover:not([disabled]) {
+    background-color: #0056b3;
+}
+
+.paginacio button.active {
+    font-weight: bold;
+    background-color: #0056b3;
+}
+
+/* Evitar que els botons estiguin un sobre l'altre */
+.paginacio .anterior,
+.paginacio .seguent,
+.paginacio .numero {
+    display: inline-block; /* Assegura que tots els botons de la paginació es mostrin en línia */
+}
+.register{
+    margin-left: 38%;
+}
+.login{
+    margin-top: 15px;
+}
+.simple{
+    width: 30vw;
+    padding-inline: 20px;
+}
+
+form {
+    display: none;
+}
+
+form.active {
+    display: block;
+}
+
+/* Estil de l'enllaç "He oblidat la contrasenya" */
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/*Finestra de logout*/
+.logout-container {
+    background: rgba(255, 255, 255, 0.8); /* Fons similar al contenidor del formulari */
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px; /* Amplada del contenidor */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: fixed; /* Posiciona la finestra al costat */
+    top: 30px; /* Ajusta l'espai superior */
+    right: 20px; /* Espai del costat dret */
+    text-align: left; /* Centra el text */
+    z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
+}
+.form-logout{
+    display: block;
+}
+.logout-button {
+    display: block; /* Assegura que el botó es mostri com un bloc */
+    background-color: red; /* Canvia temporalment el color de fons */
+    color: white; /* Canvia el color del text */
+    width: 80px;
+    height: 25px;
+}
+
+
+.logout-button:hover {
+    background-color: #c82333; /* Color del botó en hover */
+}
+.form_compres{
+    display: block;
+}
+/*Formulari Oblit correu*/
+.oblidcorreu {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario en la página */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Bordes del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+.oblidcorreu h1 {
+    text-align: center; /* Centra el título */
+    color: #333; /* Color del texto del título */
+}
+
+.oblidcorreu label {
+    display: block; /* Asegura que las etiquetas ocupen toda la línea */
+    margin: 10px 0 5px; /* Espaciado entre etiqueta y campo de entrada */
+    color: #555; /* Color de las etiquetas */
+}
+
+.oblidcorreu input[type="email"],
+.oblidcorreu input[type="password"] {
+    width: 100%; /* Campo de entrada ocupa todo el ancho */
+    padding: 10px; /* Espaciado interno de los campos */
+    margin-bottom: 15px; /* Espaciado entre campos */
+    border: 1px solid #ccc; /* Bordes de los campos */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+.oblidcorreu button {
+    width: 100%; /* Botón ocupa todo el ancho */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: #28a745; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin bordes */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Efecto de transición en el color de fondo */
+}
+
+.oblidcorreu button:hover {
+    background-color: #218838; /* Color de fondo al pasar el ratón */
+}
+.oblidcorreu {
+    display: block; /* Asegura que el div sea un bloque */
+    visibility: visible; /* Asegura que sea visible */
+}
+.missatge-exit {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.form-reestablir{
+    display: block;
+}
+.veure_compres{
+    margin-top: 30px;
+}
