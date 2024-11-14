@@ -1,0 +1,37 @@
+html/
+│
+│
+├── vista/
+│    ├── vista.formulari.php                (Vista per visualitzar, modificar i comprar articles)
+│    ├── vista.formularilogin.php           (Vista inicial per defecte, pàgina de login)
+│    ├── vista.oblit.php                    (Vista per recuperar la contrasenya)
+│    ├── vista.reestableix_contrasenya.php  (Vista per restablir la contrasenya amb token de correu)
+│    ├── vista.veureCompres.php             (Vista per visualitzar les compres de l'usuari)
+│    ├── vista.canviContUser.php            (Vista per realitzar el canvi voluntari de contrasenya)
+│
+├── controlador/                            (Carpeta que conté controladors)
+│   ├── cont.compres_usuari.php             (Modifica la BD per afegir les compres de l'usuari)
+│   ├── cont.connexio.php                   (Connexió a la base de dades, retorna $pdo)
+│   ├── cont.logout.php                     (Gestiona el logout, redirigeix a vista.oblit.php)
+│   ├── cont.processar.php                  (Processa funcions de llistar, update, delete i modificar articles a vista.formulari.php)
+│   ├── cont.tokenRecCon.php                (Gestiona els tokens per a la recuperació de contrasenyes, compara i modifica la contrasenya)
+│   ├── cont.veureCompres.php               (Subministra dades per mostrar a vista.veureCompres.php)
+│   ├── cont.canviContUser.php              (Gestiona el canvi de contrasenya d'un usuari logat mitjançant la seva contrasenya actual)
+│   ├── cont.eliminarCompra.php             (Gestiona l'eliminació de compres de l'usuari)
+│   └── cont.articles.php                   (Gestiona l'ordre i recerca d'articles)
+│
+├── model/                                  (Carpeta que conté models)
+│   ├── model.login.php                     (Gestió de login, redirigeix a vista.formulari.php)
+│   ├── model.oblit.php                     (Envia email per recuperar contrasenya i redirigeix a vista.formularilogin.php)
+│   └── model.register.php                  (Registra usuaris nous a la base de dades)
+│
+├── phpmailer/                              (Carpeta que conté PHPMailer per enviar correus)
+│
+├── reCaptchaKeys/
+│    └── keys.autoload.php                  (Arxiu encarregat de guardar els codis de connexió del client i servidor en variables per tal d'amagar-les) 
+│
+│
+│
+├──img
+│
+└──css

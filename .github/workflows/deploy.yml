@@ -1,0 +1,32 @@
+name: Deploy to DonDominio
+on:
+  push:
+    branches:
+      - master 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v4
+
+    - name: Upload files to DonDominio via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ftp.jlopez5.cat # Cambiar a tu nombre de dominio
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public/
+        exclude: |
+          *.sql
+          README.md
+          .git/**
+          .github/**
+          .gitignore
+          *PHPMailer/**
+          *img/**
+          *cont.connexio.php
+          *reCaptchaKeys/**
+          *model.oblitContra.php
