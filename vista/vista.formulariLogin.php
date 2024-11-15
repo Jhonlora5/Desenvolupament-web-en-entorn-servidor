@@ -45,13 +45,14 @@ $cookiesAcceptades = isset($_COOKIE['acceptaCookies']) ? true : false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acceptaCookies'])) {
     setcookie('acceptaCookies', 'true', time() + (30 * 24 * 60 * 60), '/'); // Cookie per 30 dies
     $cookiesAcceptades =true;
-    header("Location: vista.formularilogin.php");
+    header("Location: vista.formulariLogin.php");
     exit();
 }
 $mostrarRecaptcha = isset($_SESSION['intents_fallits']) && $_SESSION['intents_fallits'] > 3;
 
 //Càrrega de variables amb el codi Recaptcha
 $keyRecaptcha = $_SESSION['key-client'];
+
 // Verificar si l'usuari ja està autenticat
 if (isset($_SESSION['nom_usuari'])) {
     // Si ja està autenticat, carreguem les dades de l'usuari
@@ -64,7 +65,7 @@ if (isset($_SESSION['nom_usuari'])) {
     }
 } 
 
-// Mostrar la informació de l'usuari, si està autenticat
+//Mostrar la informació de l'usuari, si està autenticat
 //if (isset($_SESSION['nom_usuari'])) {
 //    echo "Benvingut, " . htmlspecialchars($_SESSION['nom_usuari']);
 //} else {
