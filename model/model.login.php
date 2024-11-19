@@ -99,6 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['sessio_iniciada'] = time();
     $_SESSION['nom_usuari'] = $usuari['nom'];
     $_SESSION['missatgeCorrecte'] = "Sessió iniciada correctament!";
+    //Afegim el numero corresponent a l'usauri(si es un 1 podrà veure segons quines coses si es un 2 no)
+    $_SESSION['nivell_administrador'] = $usuari['nivell_administrador'];
 
     // Redirigir a la vista de formulari
     header('Location: ../vista/vista.formulari.php');

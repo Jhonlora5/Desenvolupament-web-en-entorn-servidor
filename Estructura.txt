@@ -8,6 +8,7 @@ html/
 │    ├── vista.reestableix_contrasenya.php  (Vista per restablir la contrasenya amb token de correu)
 │    ├── vista.veureCompres.php             (Vista per visualitzar les compres de l'usuari)
 │    ├── vista.canviContUser.php            (Vista per realitzar el canvi voluntari de contrasenya)
+|    ├── vista.administrador.php            (Control total per veure i eliminar els usuaris)
 │
 ├── controlador/                            (Carpeta que conté controladors)
 │   ├── cont.compres_usuari.php             (Modifica la BD per afegir les compres de l'usuari)
@@ -18,7 +19,8 @@ html/
 │   ├── cont.veureCompres.php               (Subministra dades per mostrar a vista.veureCompres.php)
 │   ├── cont.canviContUser.php              (Gestiona el canvi de contrasenya d'un usuari logat mitjançant la seva contrasenya actual)
 │   ├── cont.eliminarCompra.php             (Gestiona l'eliminació de compres de l'usuari)
-│   └── cont.articles.php                   (Gestiona l'ordre i recerca d'articles)
+│   ├── cont.articles.php                   (Gestiona l'ordre i recerca d'articles)
+│   ├── cont.administracioUsuaris.php       (Gestiona el control de l'administracio dels usuaris)
 │
 ├── model/                                  (Carpeta que conté models)
 │   ├── model.login.php                     (Gestió de login, redirigeix a vista.formulari.php)

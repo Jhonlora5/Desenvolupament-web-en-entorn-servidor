@@ -4,10 +4,10 @@
 require_once '../controlador/cont.connexio.php';
 //Creació de la crida a la funció de la connexió.
 $pdo = obtenirConnexio();
-echo "Sessió iniciada correctament"; // Depuració per confirmar càrrega
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//echo "Sessió iniciada correctament"; // Depuració per confirmar càrrega
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nom = $_POST['nom'];

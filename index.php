@@ -3,4 +3,3 @@
 header("Location: vista/vista.formulariLogin.php");
 exit();
 ?>
-

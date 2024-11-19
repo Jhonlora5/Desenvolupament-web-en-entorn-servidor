@@ -156,7 +156,7 @@ function esborrarArticle($id_article) {
 //Verificacio d'usuari per correu(s'utilitza a model.login.php)
 function verificarUsuariPerEmail($email, $pdo) {
     // Comprovem si l'usuari existeix
-    $stmt = $pdo->prepare("SELECT id_usuari, nom, contrasenya FROM usuaris WHERE email = :email");
+    $stmt = $pdo->prepare("SELECT id_usuari, nom, contrasenya, nivell_administrador FROM usuaris WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -245,7 +245,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_insercio_modifica
             }        
         }
     //Obtenir la pàgina actual del formulari
-    $paginaActual = isset($_POST['pagina']) ? (int)$_POST['pagina'] : 1;
+    $paginaActual = isset($_POST['pagina']) ? (int)$_POST['pagina'] : 1;   
 
     //Guardar els missatges d'error o "correctes" a la sessión per tal de recollir-ho des de vista.formulari.php
     $_SESSION['missatgeError'] = $missatgeError;

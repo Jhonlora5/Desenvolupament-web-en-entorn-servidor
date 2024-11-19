@@ -46,7 +46,12 @@ if (!empty($nomCerca)) {
         $missatgeError = "No pots accedir aquest arxiu si no estas logat.";
         exit();
     }
-    //print_r($_SESSION['usuari_id']);    
+    //print_r($_SESSION['usuari_id']);
+    if (isset($_SESSION['nivell_administrador'])) {
+        echo "Nivell d'administrador: " . htmlspecialchars($_SESSION['nivell_administrador']);
+    } else {
+        echo "La variable 'nivell_administrador' no està definida.";
+    }  
 ?>
 <!DOCTYPE html>
 <html lang="ca">

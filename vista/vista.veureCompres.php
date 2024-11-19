@@ -47,11 +47,15 @@ foreach ($compres as $compra) {
                 <?php echo is_array($missatgeCorrecte) ? htmlspecialchars($missatgeCorrecte['aconseguit']) : htmlspecialchars($missatgeCorrecte); ?>
             </h4>       
         <?php endif; ?>
+        
     <div class="veure_compres">    
-        <a href="vista.canviContUser.php">Canvi de contrasenya</a>
+        <a href="../vista/vista.administrador.php">Administra Usuaris</a>
     </div>
     <div class="veure_compres">    
-        <a href="vista.formulari.php">Torna a comprar</a>
+        <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
+    </div>
+    <div class="veure_compres">    
+        <a href="../vista/vista.formulari.php">Torna a comprar</a>
     </div>
     </div>
     

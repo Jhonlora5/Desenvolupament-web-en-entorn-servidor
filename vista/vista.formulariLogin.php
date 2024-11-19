@@ -36,7 +36,9 @@ if (is_array($pdo) && isset($pdo['error'])) {
     $email = $_SESSION['dadesForm']['email'] ?? '';
     //Elimina els missatges de la sessió perquè no es mostrin repetidament
     unset($_SESSION['dadesForm']);
-    
+
+    print_r($nom);
+    print_r($email);
 //POLÍTICA DE COOKIES
 //Verifica si l'usuari ha acceptat les cookies
 $cookiesAcceptades = isset($_COOKIE['acceptaCookies']) ? true : false;
