@@ -10,11 +10,21 @@ $total_pages = $resultat['total_pages'];
 $page = $resultat['page'];
 //session_start();
 
+//CONTROL MISSATGES D'ERRORS
+    //Recuperacio de dos missatges, un d'error i un altre de missatges correctes, on es càrregara a la variable el missatge que arriba del fitcher processar.php
+    $missatgeError = isset($_SESSION['missatgeError']) ? $_SESSION['missatgeError'] : '';
+    $missatgeCorrecte = isset($_SESSION['missatgeCorrecte']) ? $_SESSION['missatgeCorrecte'] : '';
+
+    //Una vegada carregat a la variable esborrem les dades que tenim al $_SESSION per tal de que si recarreguem de nou no carregui una dada anterior.
+    unset($_SESSION['missatgeError'], $_SESSION['missatgeCorrecte']);
+
 //Calcular el total de tots els preus de les compres
 $preu_total_global = 0;
 foreach ($compres as $compra) {
     $preu_total_global += $compra['preu_total'];
 }
+//creem una variable per tal de mostrar o no els enllaços corresponents a vista.administrador.php
+$amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['nivell_administrador'] == 1);
 ?>
 
 <!DOCTYPE html>
@@ -47,10 +57,11 @@ foreach ($compres as $compra) {
                 <?php echo is_array($missatgeCorrecte) ? htmlspecialchars($missatgeCorrecte['aconseguit']) : htmlspecialchars($missatgeCorrecte); ?>
             </h4>       
         <?php endif; ?>
-        
-    <div class="veure_compres">    
+
+    <div class="veure_compres <?php echo $amagaVeureCompres ? 'amaga' : ''; ?>">    
         <a href="../vista/vista.administrador.php">Administra Usuaris</a>
     </div>
+    
     <div class="veure_compres">    
         <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
     </div>

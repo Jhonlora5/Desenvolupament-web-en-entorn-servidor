@@ -153,15 +153,6 @@ function esborrarArticle($id_article) {
     return [ 'error' => "L'ID d'article és obligatori!"];
 }
 
-//Verificacio d'usuari per correu(s'utilitza a model.login.php)
-function verificarUsuariPerEmail($email, $pdo) {
-    // Comprovem si l'usuari existeix
-    $stmt = $pdo->prepare("SELECT id_usuari, nom, contrasenya, nivell_administrador FROM usuaris WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-
 //Processar el formulari depenent de l'acció seleccionada
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_insercio_modificacio'])) { 
         $accio = $_POST['accio'] ?? '';

@@ -1124,3 +1124,6 @@ input[type="email"]::placeholder {
     text-align: left; /* Centra el text */
     z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
 }
+.amaga {
+    display: none;
+}

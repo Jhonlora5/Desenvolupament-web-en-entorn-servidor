@@ -47,11 +47,21 @@ if (!empty($nomCerca)) {
         exit();
     }
     //print_r($_SESSION['usuari_id']);
-    if (isset($_SESSION['nivell_administrador'])) {
-        echo "Nivell d'administrador: " . htmlspecialchars($_SESSION['nivell_administrador']);
-    } else {
-        echo "La variable 'nivell_administrador' no està definida.";
-    }  
+    //Si es vol revisar la variable que controla l'administracio de dades.
+    //if (isset($_SESSION['nivell_administrador'])) {
+    //    echo "Nivell d'administrador: " . htmlspecialchars($_SESSION['nivell_administrador']);
+    //} else {
+    //    echo "La variable 'nivell_administrador' no està definida.";
+    //}
+// Mostrar la cookie associada al "recorda'm"
+//echo '<pre>Cookie recorda_token: ';
+//print_r($_COOKIE['recorda_token'] ?? 'No existeix');
+//echo '</pre>';
+
+//Mostrar el contingut de la sessió
+//echo '<pre>Sessió actual: ';
+//print_r($_SESSION);
+//echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="ca">

@@ -23,9 +23,10 @@ html/
 │   ├── cont.administracioUsuaris.php       (Gestiona el control de l'administracio dels usuaris)
 │
 ├── model/                                  (Carpeta que conté models)
-│   ├── model.login.php                     (Gestió de login, redirigeix a vista.formulari.php)
+│   ├── model.login.php                     (Gestió de login, redirigeix a vista.formulari.php)(ELIMINAT)
 │   ├── model.oblit.php                     (Envia email per recuperar contrasenya i redirigeix a vista.formularilogin.php)
-│   └── model.register.php                  (Registra usuaris nous a la base de dades)
+│   ├── model.register.php                  (Registra usuaris nous a la base de dades)(ELIMINAT)
+│   └── model.loginRegistre.php             (Encarregat de realitzar el login i registre corresponent, a mes, gestiona el token encarregat del remerme-me)
 │
 ├── phpmailer/                              (Carpeta que conté PHPMailer per enviar correus)
 │

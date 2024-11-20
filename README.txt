@@ -54,9 +54,9 @@ S’ha afegit diversos directoris git per tal de fer la pujada dels arxius mitja
 
 Ampliació de vites i constants, s’ha afegit una vista.administrador.php, aquesta nomes es accessible per un usuari de nivell 1, 
 s’utilitza una variable de sessió per aquesta tasca. Aquesta vista utilitza una llista que es crida al entrar a un document anomenat 
-cont.administracioUsuaris.php, a on l’administrador te privilegis per esborrar(canviar el nivell dels usuaris “administrador o no”, 
-encara no està implementat del tot).
+cont.administracioUsuaris.php, a on l’administrador te privilegis per esborrar.
 
 La taula usuaris a sigut modificada també per a realitzar aquesta tasca, s’ha creat una columna nova anomenada nivell_administrador en la que es un int, 
 el valor per defecte serà 2, per tant el nivell 1 serà administrador i l’altre usuari pla.
+
 

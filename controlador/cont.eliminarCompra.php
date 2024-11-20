@@ -24,6 +24,7 @@ try {
         $quantitat = $compra['quantitat'];
         $fk_article_articles = $compra['fk_article_articles'];
         
+        
         $sql_update = "UPDATE articles SET quantitat_disponible = quantitat_disponible + :quantitat WHERE id_article = :id_article";
         $stmt_update = $pdo->prepare($sql_update);
         $stmt_update->bindParam(':quantitat', $quantitat, PDO::PARAM_INT);
@@ -38,15 +39,18 @@ try {
 
 
         //Porte'm l'encert corresponent a la variables de sempre
-        $_SESSION['missatgeCorrecte'] = "Compra eliminada correctament.";
+        $_SESSION['missatgeCorrecte'] = "L'article amb la id $fk_article_articles s'asborrat correctament";
+
     } else {
          //Porte'm l'error corresponent a la variables de sempre 
-        $_SESSION['missatgeError'] = "Error en eliminar la compra: " . $e->getMessage();
+         $_SESSION['missatgeError'] = "No s'ha trobat cap compra amb aquest $fk_article_articles de ID.";
     }
+    
 } catch (PDOException $e) {
     //Porte'm l'error corresponent a la variables de sempre 
     $_SESSION['missatgeError'] = "Error en eliminar la compra: " . $e->getMessage();
 }
+
 // Redirigir a vista.veureCompres.php
 header("Location: ../vista/vista.veureCompres.php");
 exit();

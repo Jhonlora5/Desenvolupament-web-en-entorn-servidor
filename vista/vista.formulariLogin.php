@@ -130,7 +130,7 @@ if (isset($_SESSION['nom_usuari'])) {
         </div>
 
         <!-- Formulari de Login -->
-        <form id="loginForm" class="active" action="/model/model.login.php" method="POST">
+        <form id="loginForm" class="active" action="/model/model.loginRegistre.php" method="POST">
             <label for="emailLogin">Correu electrònic</label>
             <!--La linia corresponent a php es l'encarregada d'agafar les dades que s'havien introduït anteriorment-->
             <input type="email" id="emailLogin" name="email" required value="<?= isset($_SESSION['dadesForm']['email']) ? htmlspecialchars($_SESSION['dadesForm']['email']) : ''; ?>">
@@ -154,7 +154,7 @@ if (isset($_SESSION['nom_usuari'])) {
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
         <!-- Formulari de Registre -->
-        <form id="registerForm" action="/model/model.register.php" method="POST">
+        <form id="registerForm" action="/model/model.loginRegistre.php" method="POST">
             <label for="nom">Nom</label>
             <!--La linia corresponent a php es l'encarregada d'agafar les dades que s'havien introduït anteriorment-->
             <input type="text" id="nom" name="nom" placeholder="Escriu el teu nom" required value="<?= isset($_SESSION['dadesForm']['nom']) ? htmlspecialchars($_SESSION['dadesForm']['nom']) : ''; ?>">

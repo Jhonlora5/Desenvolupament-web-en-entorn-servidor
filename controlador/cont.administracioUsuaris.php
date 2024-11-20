@@ -14,6 +14,7 @@ function obtenirLlistaUsuaris() {
     }
 }
 
+
 // Funció per esborrar un usuari
 function esborrarUsuari($id_usuari) {
     global $pdo;
@@ -88,3 +89,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['accio'])) {
     header("Location: ../vista/vista.administrador.php");
     exit();
 }
+?>

@@ -14,6 +14,7 @@ $usuaris = $pdo->query("SELECT id_usuari, nom, email, data_registre, nivell_admi
 
 //Nomes els usuaris administradors poden entrar
 if ($_SESSION['nivell_administrador'] != 1) {
+    $_SESSION['missatgeError'] = "Accés denegat: no tens permisos suficients.";
     header("Location: ../vista/vista.formulari.php");
     exit();
 }
@@ -82,7 +83,7 @@ if ($_SESSION['nivell_administrador'] != 1) {
                 <td><?= htmlspecialchars($usuari['data_registre']); ?></td>
                 <td>
                     <!-- Formulari per actualitzar el nivell d'administrador -->
-                    <form action="../controlador/cont.administracioUsuaris.php" method="post">
+                    <form action="../controlador/cont.administracioUsuaris.php" method="post" style="display: block">
                         <input type="hidden" name="accio" value="actualitzar_nivell">
                         <input type="hidden" name="id_usuari" value="<?= $usuari['id_usuari']; ?>">
                         <select name="nivell_administrador" class="form-select">
@@ -94,10 +95,12 @@ if ($_SESSION['nivell_administrador'] != 1) {
                 </td>
                 <td>
                     <!-- Formulari per eliminar l'usuari -->
-                    <form action="../controlador/cont.administracioUsuaris.php" method="post">
+                    <form action="../controlador/cont.administracioUsuaris.php" method="post" style="display: block">
                         <input type="hidden" name="accio" value="delete">
                         <input type="hidden" name="id_usuari" value="<?= $usuari['id_usuari']; ?>">
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                        <button type="submit" class="btn btn-danger">
+                            <img src="../img/browse.png" alt="Eliminar" style="width: 32px; height: 32px;">
+                        </button>
                     </form>
                 </td>
             </tr>
