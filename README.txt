@@ -59,4 +59,13 @@ cont.administracioUsuaris.php, a on l’administrador te privilegis per esborrar
 La taula usuaris a sigut modificada també per a realitzar aquesta tasca, s’ha creat una columna nova anomenada nivell_administrador en la que es un int, 
 el valor per defecte serà 2, per tant el nivell 1 serà administrador i l’altre usuari pla.
 
+S'ha redistribuit els arxius, ara tenim les funcions al model i l'arribada dels formularis al controlador, com demana el professor.
+També s'ha unificat login+Registre a un unic arxiu com demana el prefessor.
+
+La distribució dels tokens a diferents taules es realitza per seguretat i per no recàrregar una sola taula per l'ús de tokens,
+què en el nostre cas s'utilitza un token per a la caducitat del remember-me amb una durada de 30 dies i un token per a realitzar el canvi de contrasenya.
+
+Es pot fer en una sola taula? i tant que si, però, es millor tenir-ho separat per el tema d'escalabilitat, es a dir, si en un futur la nostra pàgina té una
+una concurrencia alta d'usuaris, podría arribar a passar que una taula concreta estigues treballant molt més que d'altres fent que la responsta de una
+d'elles sigues molt més lenta i per tant la càrrega de dades per part de l'usuari(compres, visualitzacio, cerca...etc).
 

@@ -63,6 +63,10 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
     </div>
     
     <div class="veure_compres">    
+        <a href="../vista/vista.edicioPerfil.php">Edita el teu perfil</a>
+    </div>
+    
+    <div class="veure_compres">    
         <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
     </div>
     <div class="veure_compres">    

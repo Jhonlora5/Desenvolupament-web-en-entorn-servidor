@@ -1,6 +1,5 @@
 <!--Jonathan Lopez Ramos-->
 <?php
-
 // cridem al document que s'encarrega de processar les dades(Funcions i la connexio a la base de dades)
 require '../controlador/cont.articles.php';
 
@@ -120,7 +119,7 @@ if (!empty($nomCerca)) {
 <div class="container">       
     <h1>Gestió d'Articles</h1>    
     <!--Creacio dels botons per el formulari dinamic-->
-    <form method="POST" action="/controlador/cont.processar.php" style="display: block">     
+    <form method="POST" action="../model/model.processar.php" style="display: block">     
         <h2>Seleccioneu l'acció</h2>
             <!--Realitzem la crida de la funció on enviem a més totes les dades, cheked final es per posar per defecte al entrar a la web-->
             <label><input title="Aquest camp serveix per inserir articles" type="radio" name="accio" value="insert" onclick="mostrarFormulari()" checked> Inserir</label>

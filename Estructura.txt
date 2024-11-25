@@ -14,7 +14,7 @@ html/
 │   ├── cont.compres_usuari.php             (Modifica la BD per afegir les compres de l'usuari)
 │   ├── cont.connexio.php                   (Connexió a la base de dades, retorna $pdo)
 │   ├── cont.logout.php                     (Gestiona el logout, redirigeix a vista.oblit.php)
-│   ├── cont.processar.php                  (Processa funcions de llistar, update, delete i modificar articles a vista.formulari.php)
+│   ├── cont.processar.php                  (Conte les funcions per processar els articles, insercio, esborrat, i modificacio.)
 │   ├── cont.tokenRecCon.php                (Gestiona els tokens per a la recuperació de contrasenyes, compara i modifica la contrasenya)
 │   ├── cont.veureCompres.php               (Subministra dades per mostrar a vista.veureCompres.php)
 │   ├── cont.canviContUser.php              (Gestiona el canvi de contrasenya d'un usuari logat mitjançant la seva contrasenya actual)
@@ -26,12 +26,15 @@ html/
 │   ├── model.login.php                     (Gestió de login, redirigeix a vista.formulari.php)(ELIMINAT)
 │   ├── model.oblit.php                     (Envia email per recuperar contrasenya i redirigeix a vista.formularilogin.php)
 │   ├── model.register.php                  (Registra usuaris nous a la base de dades)(ELIMINAT)
-│   └── model.loginRegistre.php             (Encarregat de realitzar el login i registre corresponent, a mes, gestiona el token encarregat del remerme-me)
+│   ├── model.loginRegistre.php             (Encarregat de realitzar el login i registre corresponent, a mes, gestiona el token encarregat del remerme-me)
+│   ├── model.processar.php                 (Encarregat de la rebuda de formulari, crida a cont.processar.php per tal d'utilitzar les seves funcions)
 │
 ├── phpmailer/                              (Carpeta que conté PHPMailer per enviar correus)
 │
 ├── reCaptchaKeys/
-│    └── keys.autoload.php                  (Arxiu encarregat de guardar els codis de connexió del client i servidor en variables per tal d'amagar-les) 
+│    └── keys.autoload.php                  (Arxiu encarregat de guardar els codis de connexió del client i servidor en variables per tal d'amagar-les)
+│ 
+├── imgPerfil
 │
 │
 │

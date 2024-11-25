@@ -1,13 +1,13 @@
 <?php
 /*Jonathan Lopez Ramos jaaaaaaarrrrrrr*/
 
-//Cridem a cont.processar.php que conté la connexió a la base de dades.
+//Cridem a model.processar.php que conté la connexió a la base de dades.
 //Aquesta crida és necessaria per tal de mostrar els articles amb les mateixes funcions que ja tenim a l'arxiu.
 require '../controlador/cont.processar.php';
-//echo file_exists('controlador/cont.processar.php') ? 'Arxiu trobat' : 'Arxiu no trobat';
+//echo file_exists('controlador/model.processar.php') ? 'Arxiu trobat' : 'Arxiu no trobat';
 require_once '../reCaptchaKeys/keys.autoload.php';
 
-//Verificar si hi ha algun error en la connexió per la crida a cont.processar.php que ja conté la crida a cont.connexio.php
+//Verificar si hi ha algun error en la connexió per la crida a model.processar.php que ja conté la crida a cont.connexio.php
 if (is_array($pdo) && isset($pdo['error'])) {
     //Mostrar error en cas de fallada de connexió(Rectificacio d'errors).
     die($pdo['error']);  
@@ -130,7 +130,7 @@ if (isset($_SESSION['nom_usuari'])) {
         </div>
 
         <!-- Formulari de Login -->
-        <form id="loginForm" class="active" action="/model/model.loginRegistre.php" method="POST">
+        <form id="loginForm" class="active" action="/controlador/cont.loginRegistre.php" method="POST">
             <label for="emailLogin">Correu electrònic</label>
             <!--La linia corresponent a php es l'encarregada d'agafar les dades que s'havien introduït anteriorment-->
             <input type="email" id="emailLogin" name="email" required value="<?= isset($_SESSION['dadesForm']['email']) ? htmlspecialchars($_SESSION['dadesForm']['email']) : ''; ?>">
@@ -154,7 +154,7 @@ if (isset($_SESSION['nom_usuari'])) {
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
         <!-- Formulari de Registre -->
-        <form id="registerForm" action="/model/model.loginRegistre.php" method="POST">
+        <form id="registerForm" action="/controlador/cont.loginRegistre.php" method="POST">
             <label for="nom">Nom</label>
             <!--La linia corresponent a php es l'encarregada d'agafar les dades que s'havien introduït anteriorment-->
             <input type="text" id="nom" name="nom" placeholder="Escriu el teu nom" required value="<?= isset($_SESSION['dadesForm']['nom']) ? htmlspecialchars($_SESSION['dadesForm']['nom']) : ''; ?>">
