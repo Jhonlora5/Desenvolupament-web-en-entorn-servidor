@@ -4,7 +4,7 @@ require '../model/model.eliminarCompra.php';
 
 
 if (!isset($_SESSION['usuari_id'])) {
-    header('Location: ../vista.formularilogin.php');
+    header('Location: ../vista.formulariLogin.php');
     exit();
 }
 

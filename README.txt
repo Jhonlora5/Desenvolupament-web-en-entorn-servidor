@@ -19,7 +19,7 @@ ara es poden visualitzar a una finestra que es troba a la dreta(logout-container
 •	S’ha creat una nova carpeta on establir les keys de server i client en una variable de sessió per tal de donar una seguretat a les keys correstponents.
 
 S’ha reescrit part del codi de model.registre.php per tal de que carregui la variable de sessió $usuariId = $pdo->lastInsertId(); $_SESSION['usuari_id'] = $usuariId; 
-i que la pàgina vista.formulari.php no redireccioni en el registre a la pàgina vista.formularilogin.php.
+i que la pàgina vista.formulari.php no redireccioni en el registre a la pàgina vista.formulariLogin.php.
 
 S’ha canviat el document model.oblitcontra.php, per tal de que les select es facin amb la id de l’usuari en comptes del per el correu, 
 llavors el que fem es realitzar les selects corresponents per tal de veure la id de l’usuari al que correspon el correu.

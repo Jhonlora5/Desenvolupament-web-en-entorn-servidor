@@ -1127,3 +1127,26 @@ input[type="email"]::placeholder {
 .amaga {
     display: none;
 }
+.imatges-perfil {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.imatges-perfil label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.imatge-opcio{
+    width: 10%;
+    height: 10%;
+    text-align: center;
+}
+.avatar{
+    width: 20%;
+    height: 20%;
+    text-align: center;
+}

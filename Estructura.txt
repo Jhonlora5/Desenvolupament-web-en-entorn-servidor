@@ -3,7 +3,7 @@ html/
 │
 ├── vista/
 │    ├── vista.formulari.php                (Vista per visualitzar, modificar i comprar articles)
-│    ├── vista.formularilogin.php           (Vista inicial per defecte, pàgina de login)
+│    ├── vista.formulariLogin.php           (Vista inicial per defecte, pàgina de login)
 │    ├── vista.oblit.php                    (Vista per recuperar la contrasenya)
 │    ├── vista.reestableix_contrasenya.php  (Vista per restablir la contrasenya amb token de correu)
 │    ├── vista.veureCompres.php             (Vista per visualitzar les compres de l'usuari)
@@ -24,7 +24,7 @@ html/
 │
 ├── model/                                  (Carpeta que conté models)
 │   ├── model.login.php                     (Gestió de login, redirigeix a vista.formulari.php)(ELIMINAT)
-│   ├── model.oblit.php                     (Envia email per recuperar contrasenya i redirigeix a vista.formularilogin.php)
+│   ├── model.oblit.php                     (Envia email per recuperar contrasenya i redirigeix a vista.formulariLogin.php)
 │   ├── model.register.php                  (Registra usuaris nous a la base de dades)(ELIMINAT)
 │   ├── model.loginRegistre.php             (Encarregat de realitzar el login i registre corresponent, a mes, gestiona el token encarregat del remerme-me)
 │   ├── model.processar.php                 (Encarregat de la rebuda de formulari, crida a cont.processar.php per tal d'utilitzar les seves funcions)

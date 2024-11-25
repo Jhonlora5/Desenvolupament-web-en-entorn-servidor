@@ -5,7 +5,7 @@ function obtenirCompres($pdo, $per_page = 10) {
     // Comprovem si l'usuari ha iniciat sessió
     
     if (!isset($_SESSION['usuari_id'])) {
-        header('Location: vista.formularilogin.php');
+        header('Location: vista.formulariLogin.php');
         exit();
     }
 

@@ -11,7 +11,7 @@ session_start();
     unset($_SESSION['missatgeError'], $_SESSION['missatgeCorrecte']);
 
 if (!isset($_SESSION['usuari_id'])) {
-    header('Location: ../vista/vista.formularilogin.php');
+    header('Location: ../vista/vista.formulariLogin.php');
     $missatgeError = "No pots accedir aquesta ruta si no estas logat.";
     exit();
 }
