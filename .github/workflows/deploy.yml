@@ -26,7 +26,7 @@ jobs:
           .github/**
           .gitignore
           PHPMailer/**
-          img/**
+
           cont.connexio.php
           reCaptchaKeys/**
           model.oblitContra.php
