@@ -2,7 +2,7 @@
 require_once '../controlador/cont.connexio.php';
 require_once __DIR__ . '/ ../php/libs/google/vendor/autoload.php';
 require_once '../model/model.socialAuth.php';
-
+require '../php/libs/google/src/';
 $pdo=obtenirConnexio();
 
 
