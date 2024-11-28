@@ -32,3 +32,6 @@ jobs:
           model.oblitContra.php
           .github/**
           index.php
+          php/*
+          cont.socialAuth.php
+          model.socialAuth.php
