@@ -152,7 +152,7 @@ if (isset($_SESSION['nom_usuari'])) {
 
     <div class="social-login">
         <p>O inicia sessió amb:</p>
-        <a href="../controlador/cont.socialAuth.php?provider=Google">
+        <a href="../controlador/cont.googleAuth.php?">
             <img src="../img/google_icon.png" alt="Login amb Google" style="width: 50px; height: auto;">
         </a>
         <a href="../controlador/cont.socialAuth.php?provider=GitHub">
@@ -162,7 +162,7 @@ if (isset($_SESSION['nom_usuari'])) {
 
         <!-- Afegir el script de reCAPTCHA -->
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+        <a href="http://localhost/politica-privadesa.php">Política de Privadesa</a>
         <!-- Formulari de Registre -->
         <form id="registerForm" action="/controlador/cont.loginRegistre.php" method="POST">
             <label for="nom">Nom</label>

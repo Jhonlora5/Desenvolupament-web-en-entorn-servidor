@@ -71,4 +71,69 @@ function verificarUsuariPerIdentifier($identifier, $provider, $pdo) {
         throw new Exception("Error verificant l'usuari per identifier: " . $e->getMessage());
     }
 }
+function processarUsuariGoogle($email, $nom, $socialId, $token, $imatgeURL, $pdo) {
+    try {
+        // Busca si l'usuari social ja existeix
+        $stmt = $pdo->prepare('SELECT us.usuari_id, u.nom, u.id_imatge 
+                               FROM usuaris_socials us 
+                               JOIN usuaris u ON us.usuari_id = u.id_usuari 
+                               WHERE us.social_id = :social_id AND us.provider = :provider');
+        $stmt->execute(['social_id' => $socialId, 'provider' => 'Google']);
+        $usuari = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuari) {
+            // Si existeix, actualitza el token
+            $stmt = $pdo->prepare('UPDATE usuaris_socials 
+                                   SET token = :token 
+                                   WHERE social_id = :social_id AND provider = :provider');
+            $stmt->execute(['token' => $token, 'social_id' => $socialId, 'provider' => 'Google']);
+
+            // Carrega la sessió amb les dades de l'usuari
+            $_SESSION['usuari'] = [
+                'id' => $usuari['usuari_id'],
+                'nom' => $usuari['nom'],
+                'id_imatge' => $usuari['id_imatge']
+            ];
+            return;
+        }
+
+        // Si no existeix, registra el nou usuari i assigna-li la imatge
+        $imatgeId = null;
+        if (!empty($imatgeURL)) {
+            $stmt = $pdo->prepare('INSERT INTO imatges_perfil (ruta) VALUES (:ruta)');
+            $stmt->execute(['ruta' => $imatgeURL]);
+            $imatgeId = $pdo->lastInsertId();
+        }
+
+        // Insereix el nou usuari a la taula usuaris
+        $stmt = $pdo->prepare('INSERT INTO usuaris (nom, email, contrasenya, id_imatge) 
+                               VALUES (:nom, :email, :contrasenya, :id_imatge)');
+        $stmt->execute([
+            'nom' => $nom,
+            'email' => $email,
+            'contrasenya' => password_hash('autogenerat', PASSWORD_DEFAULT),
+            'id_imatge' => $imatgeId ?? 2 // Assigna una imatge predeterminada si no hi ha imatge
+        ]);
+        $usuariId = $pdo->lastInsertId();
+
+        // Insereix les dades socials a usuaris_socials
+        $stmt = $pdo->prepare('INSERT INTO usuaris_socials (usuari_id, provider, social_id, token) 
+                               VALUES (:usuari_id, :provider, :social_id, :token)');
+        $stmt->execute([
+            'usuari_id' => $usuariId,
+            'provider' => 'Google',
+            'social_id' => $socialId,
+            'token' => $token
+        ]);
+
+        // Carrega la sessió amb les dades de l'usuari
+        $_SESSION['usuari'] = [
+            'id' => $usuariId,
+            'nom' => $nom,
+            'id_imatge' => $imatgeId ?? 2
+        ];
+    } catch (PDOException $e) {
+        echo 'Error a la base de dades: ' . $e->getMessage();
+    }
+}
 ?>

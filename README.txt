@@ -1,4 +1,5 @@
 (Afegit)Pràctica 5
+Canvis realitzats per l'ús de Chrome i Firefox.
 •	Afegida una nova vista, en aquest cas vista.canviContUser.php amb la que l’usuari pot accedir des de l’apartat compres un cop logat.
 •	Aquesta vista demanarà l’antiga contrasenya i demanarà dos cops per a la que es vol canviar.
 •	Per tal d’augmentar la seguretat de les contrasenyes s’ha establert que aquestes com a mínim tinguin 8 caràcters i a més, 
