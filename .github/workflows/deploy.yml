@@ -25,10 +25,12 @@ jobs:
           .git/**
           .github/**
           .gitignore
-          PHPMailer/**          
+          PHPMailer/**
+          img/**
           cont.connexio.php
           reCaptchaKeys/**
           model.oblitContra.php
           index.php
           php/*
-          
+          cont.socialAuth.php
+          model.socialAuth.php
