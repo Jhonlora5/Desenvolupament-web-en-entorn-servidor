@@ -1132,7 +1132,7 @@ input[type="email"]::placeholder {
     flex-wrap: wrap;
     gap: 15px;
 }
-
+/*Part de les imatges corresponents per escollir*/
 .imatges-perfil label {
     display: flex;
     flex-direction: column;
@@ -1143,10 +1143,66 @@ input[type="email"]::placeholder {
 .imatge-opcio{
     width: 10%;
     height: 10%;
+    border-radius: 100%;
     text-align: center;
 }
 .avatar{
     width: 20%;
     height: 20%;
+    border-radius: 100%;
     text-align: center;
+}
+/* Estil per al contenidor del desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.dropdown-toggle:hover {
+    background-color: #ddd;
+}
+
+.dropdown-menu {
+    display: none; /* Amaga el menú per defecte */
+    position: absolute;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    padding: 10px;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+/* Mostra el menú quan es fa clic */
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+/* Amagar opcions específiques */
+.amaga {
+    display: none !important;
 }

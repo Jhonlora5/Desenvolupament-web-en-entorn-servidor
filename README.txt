@@ -69,3 +69,14 @@ Es pot fer en una sola taula? i tant que si, però, es millor tenir-ho separat p
 una concurrencia alta d'usuaris, podría arribar a passar que una taula concreta estigues treballant molt més que d'altres fent que la responsta de una
 d'elles sigues molt més lenta i per tant la càrrega de dades per part de l'usuari(compres, visualitzacio, cerca...etc).
 
+jhonlopezramos@gmail.com “Administrador” contrasenya Abcd1234
+gabrielgusman@gmail.com “Ususari pla” contrasenya Abcd1234
+
+S’ha creat una nova taula per les imatges corresponents als usuaris, d’aquesta manera no tenim redundància de dades a la taula d’usuaris, 
+aquesta nova taula emmagatzema la ruta de les imatges que poden escollir de perfil.
+
+Per aquesta tasca s’han creat la vista.edicioPerfil.php, que conté la vista per tal de canviar a la base de dades les dades corresponents, 
+tant la ruta com el nom d’usuari. Les dades s’envien al controlador (cont.edicioPerfil.php) i aquest utilitza les funcions que tenim al 
+model (model.edicioPerfil.php).
+
+S’han afegit les dades corresponents a cada una de les vistes per tal de que es puguin veure les imatges de l’usuari.

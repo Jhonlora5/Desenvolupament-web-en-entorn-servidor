@@ -149,6 +149,16 @@ if (isset($_SESSION['nom_usuari'])) {
             <button type="submit" class="enviardades">Inicia sessió</button>
             <p class="forgot-password"><a href="/vista/vista.oblit.php">He oblidat la meva contrasenya</a></p>
         </form>
+        
+    <div class="social-login">
+        <p>O inicia sessió amb:</p>
+        <a href="../controlador/cont.socialAuth.php?provider=Google">
+            <img src="../img/google_icon.png" alt="Login amb Google" style="width: 50px; height: auto;">
+        </a>
+        <a href="../controlador/cont.socialAuth.php?provider=GitHub">
+            <img src="../img/github_icon.png" alt="Login amb GitHub" style="width: 100px; height: auto;">
+        </a>
+    </div>
 
         <!-- Afegir el script de reCAPTCHA -->
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>

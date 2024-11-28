@@ -57,6 +57,26 @@ CREATE TABLE compres (
     FOREIGN KEY (fk_article_articles) REFERENCES articles(id_article) ON DELETE CASCADE,
     FOREIGN KEY (fk_usuari_usuaris) REFERENCES usuaris(id_usuari) ON DELETE CASCADE
 );
+-- Crear la taula d'imatges de perfil
+CREATE TABLE imatges_perfil (
+    id_imatge INT AUTO_INCREMENT PRIMARY KEY,
+    ruta VARCHAR(255) NOT NULL UNIQUE DEFAULT '../imgPerfils/default.jpg'
+);
+
+-- Inserir imatges predefinides a la taula
+INSERT INTO imatges_perfil (ruta) 
+VALUES 
+('imgPerfils/default.jpg'),
+('imgPerfils/cientifico.png'),
+('imgPerfils/joven.jpeg'),
+('imgPerfils/jovenHombre.jpg'),
+('imgPerfils/senyor.png'),
+('imgPerfils/senyorCanas.png');
+
+-- Afegir una columna a la taula usuaris per enllaçar amb la imatge
+ALTER TABLE usuaris 
+ADD COLUMN id_imatge INT DEFAULT NULL,
+ADD CONSTRAINT fk_usuari_imatge FOREIGN KEY (id_imatge) REFERENCES imatges_perfil(id_imatge);
 
 
 -- Inserció de dades a la taula articles.
@@ -84,7 +104,8 @@ INSERT INTO articles (nom, cos, img_path, quantitat_disponible, preu) VALUES
 ('Cíndria', 'La síndria és una fruita refrescant i gran amb una polpa vermella i dolça plena d’aigua.', '../img/cindria.jpg', 60, 5);
 
 INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador) 
-VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 1),
-       ('Gabr', 'gabrielgusman@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 2);
+VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 1);
+INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador)
+VALUES ('Gabriel', 'gabrielgusman@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 2);
 
 USE pt05_jonathan_lopez;

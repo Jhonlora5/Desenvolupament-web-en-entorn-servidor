@@ -33,10 +33,13 @@ html/
 │
 ├── reCaptchaKeys/
 │    └── keys.autoload.php                  (Arxiu encarregat de guardar els codis de connexió del client i servidor en variables per tal d'amagar-les)
-│ 
+│
+├── php
+│    └── libs
+│          ├── google
+│          ├── hybridauth
+│  
 ├── imgPerfil
-│
-│
 │
 ├──img
 │

@@ -26,8 +26,6 @@ foreach ($compres as $compra) {
 //creem una variable per tal de mostrar o no els enllaços corresponents a vista.administrador.php
 $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['nivell_administrador'] == 1);
 ?>
-
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -37,11 +35,19 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
     <title>Edició del Perfil</title>
 </head>
 <body>
-<div class="logout-container">
-    <form method="POST" action="/controlador/cont.logout.php" class="form-logout">
-        <button type="submit" class="logout-button">Logout</button>            
-    </form>
-    <h2>Usuari Actiu</h2>
+    <div class="logout-container">    
+        <h2>Usuari Actiu</h2>
+        <p><?php echo htmlspecialchars($_SESSION['nom_usuari']); ?></p>
+        <!-- Avatar de l'usuari -->
+        <img 
+            src="<?php echo htmlspecialchars('../'. $_SESSION['imatge_perfil'] ?? '../imgPerfils/default.jpg'); ?>" 
+            alt="Imatge de perfil"        
+            class="avatar"
+        >
+    
+        <form method="POST" action="/controlador/cont.logout.php" class="form-logout">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
     <!-- Afegim els missatges d'errors amb la variale creada anteriorment, que ens porta l'error desde el document processar.php-->
     <?php if (!empty($missatgeError)): ?>        
         <h4 class="message" style="color: red;">
@@ -55,25 +61,19 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
             <?php echo is_array($missatgeCorrecte) ? htmlspecialchars($missatgeCorrecte['aconseguit']) : htmlspecialchars($missatgeCorrecte); ?>
         </h4>       
     <?php endif; ?>
-
-    <p><?php echo htmlspecialchars($_SESSION['nom_usuari']); ?></p>
-    <!-- Avatar de l'usuari -->
-    <img 
-        src="<?php echo htmlspecialchars('../'. $_SESSION['img_perfil'] ?? '../imgPerfils/default.jpg'); ?>" 
-        alt="Imatge de perfil"
-        
-        class="avatar"
-    >
-    <div class="veure_compres <?php echo $amagaVeureCompres ? 'amaga' : ''; ?>">    
-        <a href="../vista/vista.administrador.php">Administra Usuaris</a>
-    </div>
     
-    <div class="veure_compres">    
-        <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
-    </div>
-    <div class="veure_compres">    
-        <a href="../vista/vista.formulari.php">Torna a comprar</a>
-    </div>    
+   
+    <div class="dropdown">
+        <!-- Títol del desplegable -->
+        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+            <!-- Opcions del menú -->
+            <div class="dropdown-menu">
+                <!-- Mostra l'opció Administra Usuaris només si l'usuari és administrador -->
+                <a href="../vista/vista.administrador.php" class="<?php echo $amagaVeureCompres ? 'amaga' : ''; ?>">Administra Usuaris</a>
+                <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
+                <a href="../vista/vista.formulari.php">Torna a comprar</a>
+            </div>
+        </div>  
 </div>
 
 <div class="container">
@@ -103,4 +103,11 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
 </div>
 </body>
 </html>
+<script>
+// Funció per obrir i tancar el menú desplegable
+function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('open');
+}
+</script>
 

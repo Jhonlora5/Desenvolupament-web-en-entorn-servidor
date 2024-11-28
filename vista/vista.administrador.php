@@ -31,12 +31,17 @@ if ($_SESSION['nivell_administrador'] != 1) {
 <body>
     <!-- Finestra de Logout -->
     <div class="logout-container">
-        <h2>Administracio d'usuaris</h2>
+        <h2>Administració d'usuaris</h2>
         <p><?php echo htmlspecialchars($_SESSION['nom_usuari']); ?></p>
+        <!-- Avatar de l'usuari -->
+        <img 
+            src="<?php echo htmlspecialchars('../'. $_SESSION['imatge_perfil'] ?? '../imgPerfils/default.jpg'); ?>" 
+            alt="Imatge de perfil"        
+            class="avatar"
+        >
         <form method="POST" action="/controlador/cont.logout.php"class="form-logout">
             <button type="submit" class="logout-button">Logout</button>            
         </form>
-        
         <!-- Afegim els missatges d'errors amb la variale creada anteriorment, que ens porta l'error desde el document processar.php-->
         <?php if (!empty($missatgeError)): ?>        
             <h4 class="message" style="color: red;">
@@ -52,13 +57,18 @@ if ($_SESSION['nivell_administrador'] != 1) {
         <?php endif; ?>
 
         
-        <div class="veure_compres">    
-            <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
+    <div class="dropdown">
+        <!-- Títol del desplegable -->
+        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+            <!-- Opcions del menú -->
+            <div class="dropdown-menu">
+                <a href="../vista/vista.edicioPerfil.php">Edita el teu perfil</a>
+                <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
+                <a href="../vista/vista.formulari.php">Torna a comprar</a>
+            </div>
         </div>
-        <div class="veure_compres">    
-            <a href="../vista/vista.formulari.php">Torna a comprar</a>
-        </div>      
-    </div>
+    </div>    
+
 
     <div class="veure-compres-container">
     <h1>Gestió d'Usuaris</h1>
@@ -108,3 +118,10 @@ if ($_SESSION['nivell_administrador'] != 1) {
     </div>
 </body>
 </html>
+<script>
+// Funció per obrir i tancar el menú desplegable
+function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('open');
+}
+</script>

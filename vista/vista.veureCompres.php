@@ -40,6 +40,12 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
     <div class="logout-container">
         <h2>Usuari Actiu</h2>
         <p><?php echo htmlspecialchars($_SESSION['nom_usuari']); ?></p>
+        <!-- Avatar de l'usuari -->
+        <img 
+            src="<?php echo htmlspecialchars('../'. $_SESSION['imatge_perfil'] ?? '../imgPerfils/default.jpg'); ?>" 
+            alt="Imatge de perfil"        
+            class="avatar"
+        >
         <form method="POST" action="/controlador/cont.logout.php"class="form-logout">
             <button type="submit" class="logout-button">Logout</button>            
         </form>
@@ -58,20 +64,18 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
             </h4>       
         <?php endif; ?>
 
-    <div class="veure_compres <?php echo $amagaVeureCompres ? 'amaga' : ''; ?>">    
-        <a href="../vista/vista.administrador.php">Administra Usuaris</a>
-    </div>
-    
-    <div class="veure_compres">    
-        <a href="../vista/vista.edicioPerfil.php">Edita el teu perfil</a>
-    </div>
-    
-    <div class="veure_compres">    
-        <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
-    </div>
-    <div class="veure_compres">    
-        <a href="../vista/vista.formulari.php">Torna a comprar</a>
-    </div>
+    <div class="dropdown">
+        <!-- Títol del desplegable -->
+        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+            <!-- Opcions del menú -->
+            <div class="dropdown-menu">
+                <!-- Mostra l'opció Administra Usuaris només si l'usuari és administrador -->
+                <a href="../vista/vista.administrador.php" class="<?php echo $amagaVeureCompres ? 'amaga' : ''; ?>">Administra Usuaris</a>
+                <a href="../vista/vista.edicioPerfil.php">Edita el teu perfil</a>
+                <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
+                <a href="../vista/vista.formulari.php">Torna a comprar</a>
+            </div>
+        </div>
     </div>
     
     <div class="veure-compres-container">
@@ -148,4 +152,11 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
     </div>
 </body>
 </html>
+<script>
+// Funció per obrir i tancar el menú desplegable
+function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('open');
+}
+</script>
 

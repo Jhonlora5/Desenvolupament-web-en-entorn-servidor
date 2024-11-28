@@ -93,5 +93,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_insercio_modifica
     header("Location: ../vista/vista.formulari.php?pagina=$paginaActual");
     exit();
 }
-
 ?>

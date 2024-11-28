@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Actualitzar la sessió amb els nous valors
         $_SESSION['nom_usuari'] = $nouNom;
-        $_SESSION['img_perfil'] = obtenirRutaImatge($novaImatgeId); // Ruta de la nova imatge
+        $_SESSION['imatge_perfil'] = obtenirRutaImatge($novaImatgeId); // Ruta de la nova imatge
         $_SESSION['img_perfil_id'] = $novaImatgeId;
 
         $_SESSION['missatgeCorrecte'] = "Perfil actualitzat correctament.";

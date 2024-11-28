@@ -2,7 +2,11 @@
 // Funció per verificar si l'usuari ja existeix per email
 function verificarUsuariPerEmail($email, $pdo) {
     try {
-        $stmt = $pdo->prepare("SELECT * FROM usuaris WHERE email = :email");
+        $stmt = $pdo->prepare("SELECT usuaris.*, imatges_perfil.ruta AS ruta_imatge 
+        FROM usuaris 
+        LEFT JOIN imatges_perfil 
+        ON usuaris.id_imatge = imatges_perfil.id_imatge 
+        WHERE email = :email");
         $stmt->execute([':email' => $email]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
@@ -113,6 +117,7 @@ function manejarLogin($email, $password, $pdo, $keyServer) {
     $_SESSION['usuari_id'] = $usuari['id_usuari'];
     $_SESSION['nom_usuari'] = $usuari['nom'];
     $_SESSION['nivell_administrador'] = $usuari['nivell_administrador'];
+    $_SESSION['imatge_perfil'] = $usuari['ruta_imatge'];
     gestionarTokenRecorda($usuari, $pdo);
     $_SESSION['missatgeCorrecte'] = "Sessió iniciada correctament!";
     header('Location: ../vista/vista.formulari.php');

@@ -28,7 +28,13 @@ if (!isset($_SESSION['usuari_id'])) {
     <!-- Finestra de Logout -->
     <div class="logout-container">
         <h2>Usuari Actiu</h2>
-        <p><?php echo htmlspecialchars($_SESSION['nom_usuari']); ?></p>       
+        <p><?php echo htmlspecialchars($_SESSION['nom_usuari']); ?></p>
+        <!-- Avatar de l'usuari -->
+        <img 
+            src="<?php echo htmlspecialchars('../'. $_SESSION['imatge_perfil'] ?? '../imgPerfils/default.jpg'); ?>" 
+            alt="Imatge de perfil"        
+            class="avatar"
+        >    
         <!-- Afegim els missatges d'errors amb la variale creada anteriorment, que ens porta l'error desde el document processar.php-->
         <?php if (!empty($missatgeError)): ?>        
             <h4 class="message" style="color: red;">

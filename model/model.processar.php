@@ -150,5 +150,4 @@ function esborrarArticle($id_article) {
     //Retornem l'error corresponent si la id de l'article no es troba a la casella.
     return [ 'error' => "L'ID d'article és obligatori!"];
 }
-
 ?>
