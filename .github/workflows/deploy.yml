@@ -34,5 +34,5 @@ jobs:
           php/*
           cont.socialAuth.php
           model.socialAuth.php
-          php/**
+          
           vista.politica-privadesa.php
