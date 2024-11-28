@@ -37,8 +37,8 @@ if (is_array($pdo) && isset($pdo['error'])) {
     //Elimina els missatges de la sessió perquè no es mostrin repetidament
     unset($_SESSION['dadesForm']);
 
-    print_r($nom);
-    print_r($email);
+    //print_r($nom);
+    //print_r($email);
 //POLÍTICA DE COOKIES
 //Verifica si l'usuari ha acceptat les cookies
 $cookiesAcceptades = isset($_COOKIE['acceptaCookies']) ? true : false;
@@ -149,7 +149,7 @@ if (isset($_SESSION['nom_usuari'])) {
             <button type="submit" class="enviardades">Inicia sessió</button>
             <p class="forgot-password"><a href="/vista/vista.oblit.php">He oblidat la meva contrasenya</a></p>
         </form>
-        
+
     <div class="social-login">
         <p>O inicia sessió amb:</p>
         <a href="../controlador/cont.socialAuth.php?provider=Google">

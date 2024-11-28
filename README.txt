@@ -80,3 +80,8 @@ tant la ruta com el nom d’usuari. Les dades s’envien al controlador (cont.ed
 model (model.edicioPerfil.php).
 
 S’han afegit les dades corresponents a cada una de les vistes per tal de que es puguin veure les imatges de l’usuari.
+
+Ja funciona correctament la introduccio d'usuaris mitjançant hybridAuth amb Github.
+Per aquesta tasca s'ha creat una nova taula que conté la informació de l'usuari, al modificar el perfil, aquest pot canviar el nom i la imatge corresponent.
+La càrrega de la imatge de perfil es realitza també a la funcio, on càrreguem les variables de sessio corresponents.
+S'ha afegit també el control d'errors o encerts corresponents per tal de que l'usuari pugui visualitzar si existeix algun.
