@@ -37,8 +37,10 @@ html/
 ├── php
 │    └── libs
 │          ├── google
-│          ├── hybridauth
-│  
+│          └── hybridauth
+│ 
+├── .htaccess 
+│ 
 ├── imgPerfil
 │
 ├──img
