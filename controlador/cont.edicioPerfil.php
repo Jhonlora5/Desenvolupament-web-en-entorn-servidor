@@ -3,7 +3,7 @@ require_once '../model/model.edicioPerfil.php';
 
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST'&& (isset($_POST['nom']) || isset($_POST['img_perfil']))) {
     $nouNom = trim($_POST['nom'] ?? '');
     $novaImatgeId = trim($_POST['img_perfil'] ?? '');
 

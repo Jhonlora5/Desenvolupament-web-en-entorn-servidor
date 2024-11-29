@@ -52,4 +52,5 @@ function verificarInactivitat() {
 }
 //Crida a la funció.
 verificarInactivitat();
+
 ?>

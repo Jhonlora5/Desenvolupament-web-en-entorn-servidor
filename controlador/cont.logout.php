@@ -1,17 +1,18 @@
 <?php
 /* Jonathan Lopez Ramos */
 
-//Elimina totes les variables de sessió
+session_start();
+
+// Eliminar totes les variables de sessió
 session_unset();
 
-//Destrueix la sessió
+// Destruir la sessió
 session_destroy();
-$missatgeError = "El teu temps de sessió ha caducat per inactivitat.";
 
-//Defineix el missatge d'error
-$_SESSION['missatgeError'] = $missatgeError;  
+// Eliminar cookies de sessió, si existeixen
+setcookie(session_name(), '', time() - 3600, '/');
 
-//Enviament de l'usuari al formulari de login.
+// Redirigir a la pàgina de login
+$_SESSION['missatgeError'] = "Has sortit correctament.";
 header('Location: ../vista/vista.formulariLogin.php');
-exit();
 ?>
