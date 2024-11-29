@@ -15,6 +15,8 @@ if (!isset($_SESSION['usuari_id'])) {
     $missatgeError = "No pots accedir aquesta ruta si no estas logat.";
     exit();
 }
+//creem una variable per tal de mostrar o no els enllaços corresponents a vista.administrador.php
+$amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['nivell_administrador'] == 1);
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -48,8 +50,17 @@ if (!isset($_SESSION['usuari_id'])) {
                 <?php echo is_array($missatgeCorrecte) ? htmlspecialchars($missatgeCorrecte['aconseguit']) : htmlspecialchars($missatgeCorrecte); ?>
             </h4>       
         <?php endif; ?>
-        <div class="veure_compres">    
-            <a href="/vista/vista.formulari.php">Torna a comprar</a>
+        <div class="dropdown">
+        <!-- Títol del desplegable -->
+        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+            <!-- Opcions del menú -->
+            <div class="dropdown-menu">
+                <!-- Mostra l'opció Administra Usuaris només si l'usuari és administrador -->
+                <a href="../vista/vista.administrador.php" class="<?php echo $amagaVeureCompres ? 'amaga' : ''; ?>">Administra Usuaris</a>
+                <a href="../vista/vista.edicioPerfil.php">Edita el teu perfil</a>
+                <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
+                <a href="../vista/vista.formulari.php">Torna a comprar</a>
+            </div>
         </div>
     </div>
 
@@ -70,3 +81,10 @@ if (!isset($_SESSION['usuari_id'])) {
     </div>
 </body>
 </html>
+<script>
+// Funció per obrir i tancar el menú desplegable
+function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('open');
+}
+</script>

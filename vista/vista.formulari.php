@@ -62,7 +62,8 @@ if (!empty($nomCerca)) {
 //print_r($_SESSION);
 //echo '</pre>';
 // Afegim la variable de sessio per a controlar que surti la imatge a qualsevol pagina.
-
+//creem una variable per tal de mostrar o no els enllaços corresponents a vista.administrador.php
+$amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['nivell_administrador'] == 1);
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -104,7 +105,18 @@ if (!empty($nomCerca)) {
         <form method="POST" action="/controlador/cont.logout.php"class="form-logout">
             <button type="submit" class="logout-button">Logout</button>            
         </form>
-        
+        <div class="dropdown">
+        <!-- Títol del desplegable -->
+        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+            <!-- Opcions del menú -->
+            <div class="dropdown-menu">
+                <!-- Mostra l'opció Administra Usuaris només si l'usuari és administrador -->
+                <a href="../vista/vista.administrador.php" class="<?php echo $amagaVeureCompres ? 'amaga' : ''; ?>">Administra Usuaris</a>
+                <a href="../vista/vista.edicioPerfil.php">Edita el teu perfil</a>
+                <a href="../vista/vista.canviContUser.php">Canvi de contrasenya</a>
+                <a href="../vista/vista.veureCompres.php">Visualitza les compres</a>
+            </div>
+        </div>        
         <!-- Afegim els missatges d'errors amb la variale creada anteriorment, que ens porta l'error desde el document processar.php-->
         <?php if (!empty($missatgeError)): ?>        
             <h4 class="message" style="color: red;">
@@ -118,16 +130,13 @@ if (!empty($nomCerca)) {
                 <?php echo is_array($missatgeCorrecte) ? htmlspecialchars($missatgeCorrecte['aconseguit']) : htmlspecialchars($missatgeCorrecte); ?>
             </h4>       
         <?php endif; ?>
-        
-        <div class="veure_compres">    
-            <a href="/vista/vista.veureCompres.php">Compres realitzades</a>
-        </div>       
     </div>
+        
 
 <div class="container">       
     <h1>Gestió d'Articles</h1>    
     <!--Creacio dels botons per el formulari dinamic-->
-    <form method="POST" action="../model/model.processar.php" style="display: block">     
+    <form method="POST" action="../controlador/cont.processar.php" style="display: block">     
         <h2>Seleccioneu l'acció</h2>
             <!--Realitzem la crida de la funció on enviem a més totes les dades, cheked final es per posar per defecte al entrar a la web-->
             <label><input title="Aquest camp serveix per inserir articles" type="radio" name="accio" value="insert" onclick="mostrarFormulari()" checked> Inserir</label>
@@ -156,7 +165,7 @@ if (!empty($nomCerca)) {
     </form>
     
     <!--Formulari encarregat de cercar articles per nom o ordre ascendent/descendent-->
-    <form method="POST" action="/controlador/cont.articles.php" style="display: block">
+    <form method="POST" action="../controlador/cont.articles.php" style="display: block">
         <label for="nomCerca">Buscar article:</label>
         <input type="text" id="nomCerca" name="nomCerca" placeholder="Nom de l'article" value="<?php echo $_SESSION['nomCerca'] ?? ''; ?>">
         <button type="submit">Buscar</button>
@@ -226,3 +235,10 @@ if (!empty($nomCerca)) {
         </div>        
     </body>
 </html>
+<script>
+// Funció per obrir i tancar el menú desplegable
+function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('open');
+}
+</script>
