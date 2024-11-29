@@ -36,3 +36,4 @@ jobs:
           php/**
           vista.politica-privadesa.php
           errrors/**
+          .htaccess
