@@ -86,3 +86,7 @@ Ja funciona correctament la introduccio d'usuaris mitjançant hybridAuth amb Git
 Per aquesta tasca s'ha creat una nova taula que conté la informació de l'usuari, al modificar el perfil, aquest pot canviar el nom i la imatge corresponent.
 La càrrega de la imatge de perfil es realitza també a la funcio, on càrreguem les variables de sessio corresponents.
 S'ha afegit també el control d'errors o encerts corresponents per tal de que l'usuari pugui visualitzar si existeix algun.
+
+S'ha afegit introduccio d'usuaris mitjançant google amb AuthO. Ja en funcionament.
+
+Tenim l'estructura de les carpetes a /php/libs/on tenim la carpeta Google i hybridauth.
