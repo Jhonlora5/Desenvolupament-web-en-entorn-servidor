@@ -152,7 +152,7 @@ if (isset($_SESSION['nom_usuari'])) {
 
     <div class="social-login">
         <p>O inicia sessió amb:</p>
-        <a href="../controlador/cont.googleAuth.php?">
+        <a href="../controlador/cont.googleAuth.php">
             <img src="../img/google_icon.png" alt="Login amb Google" style="width: 50px; height: auto;">
         </a>
         <a href="../controlador/cont.socialAuth.php?provider=GitHub">
