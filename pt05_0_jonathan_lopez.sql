@@ -101,7 +101,7 @@ INSERT INTO articles (nom, cos, img_path, quantitat_disponible, preu) VALUES
 ('Maduixa', 'La maduixa és una fruita petita i vermella, dolça i suculenta, ideal per a postres.', '../img/maduixa.jpg', 90, 3),
 ('Raïm', 'Els raïms són petites baies dolces, típiques en racims, amb varietats verdes i negres.', '../img/raim.jpg', 170, 4),
 ('Taronja', 'La taronja és una fruita cítrica rica en vitamina C, amb una pell taronja i polpa sucosa.', '../img/taronja.jpg', 140, 2),
-('Llimona', 'La llimona és una fruita cítrica àcida, sovint utilitzada per a sucs i amanides.', '../img/llimona.jpg', 160, 2),
+('Llimona', 'La llimona és una fruita cítrica àcida, sovint utilitzada per a sucs i amanides.', '../img/Llimona.jpg', 160, 2),
 ('Alvocat', "L'alvocat és una fruita cremosa amb un alt contingut en greixos saludables, ideal per fer guacamole.", '../img/alvocat.jpg', 100, 4),
 ('Tomàquet', 'El tomàquet és una fruita vermella que es fa servir com a verdura en moltes receptes mediterrànies.', '../img/tomaquet.jpg', 190, 2),
 ('Pebrot', 'El pebrot pot ser dolç o picant i es presenta en diferents colors com verd, vermell i groc.', '../img/pebrot.jpg', 130, 3),
@@ -113,7 +113,7 @@ INSERT INTO articles (nom, cos, img_path, quantitat_disponible, preu) VALUES
 ('Cíndria', 'La síndria és una fruita refrescant i gran amb una polpa vermella i dolça plena d’aigua.', '../img/cindria.jpg', 60, 5);
 
 INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador, id_imatge) 
-VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 1, 2);
+VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 1, 4);
 INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador, id_imatge)
 VALUES ('Gabriel', 'gabrielgusman@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 2, 2);
 
