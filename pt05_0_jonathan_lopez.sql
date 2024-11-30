@@ -112,8 +112,8 @@ INSERT INTO articles (nom, cos, img_path, quantitat_disponible, preu) VALUES
 ('Pinya', 'La pinya és una fruita tropical dolça i àcida amb una pell gruixuda i espinosa.', '../img/pinya.jpg', 70, 5),
 ('Cíndria', 'La síndria és una fruita refrescant i gran amb una polpa vermella i dolça plena d’aigua.', '../img/cindria.jpg', 60, 5);
 
-INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador) 
+INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador, id_imatge) 
 VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 1, 2);
-INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador)
+INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador, id_imatge)
 VALUES ('Gabriel', 'gabrielgusman@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 2, 2);
 
