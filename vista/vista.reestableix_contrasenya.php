@@ -23,6 +23,7 @@ require '../controlador/cont.tokenRecCon.php';
 <body>
      <!-- Finestra de Logout -->
      <div class="logout-container">
+        <h1>Realitza el canvi de contrasenya</h1>
         <!-- Afegim els missatges d'errors amb la variale creada anteriorment, que ens porta l'error desde el document processar.php-->
         <?php if (!empty($missatgeError)): ?>        
             <h4 class="message" style="color: red;">
