@@ -32,6 +32,6 @@ function obtenirRutaImatge($idImatge) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':idImatge' => $idImatge]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result['ruta'] ?? '../imgPerfils/default.jpg';
+    return $result['ruta'];
 }
 ?>

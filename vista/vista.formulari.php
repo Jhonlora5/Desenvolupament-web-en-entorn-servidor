@@ -10,8 +10,7 @@ $articles = [];
 $articlesPerPagina = 5;
 //Capturar la pàgina actual del formulari o de la URL
 $paginaActual = max(1, isset($_POST['pagina']) ? (int)$_POST['pagina'] : (isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1));
-//Depuració temporal
-//echo "Pàgina actual: $paginaActual"; 
+
 //Capturar l'última ID mostrada
 $ultimaIdMostrada = isset($_POST['ultima_id']) ? (int)$_POST['ultima_id'] : 0;
 //Calcula el total de pàgines
@@ -27,9 +26,7 @@ if (!empty($nomCerca)) {
 } else {
     $articles = obtenirArticlesOrdenats($ordre, $paginaActual, $articlesPerPagina);
 }
-//Depuració temporal per veure què s'està retornant
-//var_dump($articles); // Aquest codi imprimeix el resultat de la consulta a la pantalla
-//exit; // Afegeix exit per veure només la informació i evitar que es carregui el formulari
+
 
 //CONTROL MISSATGES D'ERRORS
 //Recuperacio de dos missatges, un d'error i un altre de missatges correctes, on es càrregara a la variable el missatge que arriba del fitcher processar.php
@@ -45,22 +42,7 @@ if (!isset($_SESSION['usuari_id'])) {
     $missatgeError = "No pots accedir aquest arxiu si no estas logat.";
     exit();
 }
-//print_r($_SESSION['usuari_id']);
-//Si es vol revisar la variable que controla l'administracio de dades.
-//if (isset($_SESSION['nivell_administrador'])) {
-//    echo "Nivell d'administrador: " . htmlspecialchars($_SESSION['nivell_administrador']);
-//} else {
-//    echo "La variable 'nivell_administrador' no està definida.";
-//}
-// Mostrar la cookie associada al "recorda'm"
-//echo '<pre>Cookie recorda_token: ';
-//print_r($_COOKIE['recorda_token'] ?? 'No existeix');
-//echo '</pre>';
 
-//Mostrar el contingut de la sessió
-//echo '<pre>Sessió actual: ';
-//print_r($_SESSION);
-//echo '</pre>';
 // Afegim la variable de sessio per a controlar que surti la imatge a qualsevol pagina.
 //creem una variable per tal de mostrar o no els enllaços corresponents a vista.administrador.php
 $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['nivell_administrador'] == 1);
@@ -90,7 +72,7 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
             document.getElementById('nom_group').style.display = (accio === 'insert' || accio === 'update') ? 'block' : 'none';
             document.getElementById('cos_group').style.display = (accio === 'insert' || accio === 'update') ? 'block' : 'none';
         }
-        // Funció per obrir i tancar el menú desplegable
+        // Funció per obrir i tancar el menú desplegable d'acces a les diverses pàgines.
         function toggleDropdown() {
             const dropdown = document.querySelector('.dropdown');
             dropdown.classList.toggle('open');

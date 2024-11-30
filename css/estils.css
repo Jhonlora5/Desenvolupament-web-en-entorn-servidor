@@ -1,6 +1,7 @@
 /* Jonathan Lopez Ramos */
 /* Estils generals */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -14,40 +15,52 @@ body, html {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 20px;
-    width: 800px; /* Amplada fixa */
-    margin: 40px auto; /* Centrat horitzontal amb auto */
+    width: 800px;
+    /* Amplada fixa */
+    margin: 40px auto;
+    /* Centrat horitzontal amb auto */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    clear: both; /* Per assegurar que no s'encavalqui res a sobre */
+    clear: both;
+    /* Per assegurar que no s'encavalqui res a sobre */
 }
 
 /*Estils de títols*/
-h1, h2, h4 {
+h1,
+h2,
+h4 {
     text-align: center;
     margin: 10px 0;
 }
 
 /*Formulari*/
 form {
-    width: 100%; /* 100% de l'amplada del contenidor */
-    margin: 0 auto; /* Centrat */
-    clear: both; /* Evitar interferències */
+    width: 100%;
+    /* 100% de l'amplada del contenidor */
+    margin: 0 auto;
+    /* Centrat */
+    clear: both;
+    /* Evitar interferències */
 }
 
 label {
-    display: block; /* Força a cada label a ocupar una línia */
+    display: block;
+    /* Força a cada label a ocupar una línia */
     margin-top: 10px;
 }
 
-input[type="text"], textarea {
-    width: 95%; /* Aproximadament tota l'amplada del contenidor */
+input[type="text"],
+textarea {
+    width: 95%;
+    /* Aproximadament tota l'amplada del contenidor */
     padding: 10px;
     margin: 5px 0;
     border-radius: 4px;
     border: 1px solid #ccc;
-    float: none; /* Assegura que no hi hagi flotació aquí */
+    float: none;
+    /* Assegura que no hi hagi flotació aquí */
 }
 
-.enviardades{
+.enviardades {
     padding: 10px;
     margin-top: 10px;
     background-color: #28a745;
@@ -55,7 +68,8 @@ input[type="text"], textarea {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 98%; /* Ajusta l'amplada segons el contingut */
+    width: 98%;
+    /* Ajusta l'amplada segons el contingut */
     clear: both;
 }
 
@@ -65,10 +79,12 @@ input[type="text"], textarea {
 
 /* Estils de la taula */
 table {
-    width: 100%; /* Ocupa tot l'ample */
+    width: 100%;
+    /* Ocupa tot l'ample */
     border-collapse: collapse;
     margin-top: 20px;
-    float: none; /* Taula sense flotació */
+    float: none;
+    /* Taula sense flotació */
 }
 
 th {
@@ -76,7 +92,8 @@ th {
     color: white;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
@@ -88,6 +105,7 @@ th, td {
     margin-bottom: 20px;
     float: none;
 }
+
 /* Missatges */
 .message {
     text-align: center;
@@ -107,8 +125,10 @@ th, td {
 
 .paginacio form {
     display: inline-block;
-    text-align: center; /* Centra els botons dins del formulari */
-    white-space: nowrap; /* Manté els botons en una sola línia */
+    text-align: center;
+    /* Centra els botons dins del formulari */
+    white-space: nowrap;
+    /* Manté els botons en una sola línia */
 }
 
 .paginacio button {
@@ -121,7 +141,8 @@ th, td {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    vertical-align: middle; /* Alineació vertical dels botons */
+    vertical-align: middle;
+    /* Alineació vertical dels botons */
 }
 
 .paginacio button[disabled] {
@@ -142,15 +163,19 @@ th, td {
 .paginacio .anterior,
 .paginacio .seguent,
 .paginacio .numero {
-    display: inline-block; /* Assegura que tots els botons de la paginació es mostrin en línia */
+    display: inline-block;
+    /* Assegura que tots els botons de la paginació es mostrin en línia */
 }
-.register{
+
+.register {
     margin-left: 38%;
 }
-.login{
+
+.login {
     margin-top: 15px;
 }
-.simple{
+
+.simple {
     width: 30vw;
     padding-inline: 20px;
 }
@@ -175,99 +200,149 @@ p a:hover {
 
 /*Finestra de logout*/
 .logout-container {
-    background: rgba(255, 255, 255, 0.8); /* Fons similar al contenidor del formulari */
+    background: rgba(255, 255, 255, 0.8);
+    /* Fons similar al contenidor del formulari */
     padding: 20px;
     border-radius: 10px;
-    width: 200px; /* Amplada del contenidor */
+    width: 200px;
+    /* Amplada del contenidor */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    position: fixed; /* Posiciona la finestra al costat */
-    top: 30px; /* Ajusta l'espai superior */
-    right: 20px; /* Espai del costat dret */
-    text-align: left; /* Centra el text */
-    z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
+    position: fixed;
+    /* Posiciona la finestra al costat */
+    top: 30px;
+    /* Ajusta l'espai superior */
+    right: 20px;
+    /* Espai del costat dret */
+    text-align: left;
+    /* Centra el text */
+    z-index: 1000;
+    /* Eleva el z-index per sobre d'altres elements */
 }
-.form-logout{
+
+.form-logout {
     display: block;
 }
+
 .logout-button {
-    display: block; /* Assegura que el botó es mostri com un bloc */
-    background-color: red; /* Canvia temporalment el color de fons */
-    color: white; /* Canvia el color del text */
+    display: block;
+    /* Assegura que el botó es mostri com un bloc */
+    background-color: red;
+    /* Canvia temporalment el color de fons */
+    color: white;
+    /* Canvia el color del text */
     width: 80px;
     height: 25px;
 }
 
 
 .logout-button:hover {
-    background-color: #c82333; /* Color del botó en hover */
+    background-color: #c82333;
+    /* Color del botó en hover */
 }
-.form_compres{
+
+.form_compres {
     display: block;
 }
+
 /*Formulari Oblit correu*/
 .oblidcorreu {
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centra el formulario en la página */
-    padding: 20px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Bordes del formulario */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Color de fondo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    max-width: 400px;
+    /* Ancho máximo del formulario */
+    margin: 0 auto;
+    /* Centra el formulario en la página */
+    padding: 20px;
+    /* Espaciado interno */
+    border: 1px solid #ccc;
+    /* Bordes del formulario */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    background-color: #f9f9f9;
+    /* Color de fondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidad */
 }
 
 .oblidcorreu h1 {
-    text-align: center; /* Centra el título */
-    color: #333; /* Color del texto del título */
+    text-align: center;
+    /* Centra el título */
+    color: #333;
+    /* Color del texto del título */
 }
 
 .oblidcorreu label {
-    display: block; /* Asegura que las etiquetas ocupen toda la línea */
-    margin: 10px 0 5px; /* Espaciado entre etiqueta y campo de entrada */
-    color: #555; /* Color de las etiquetas */
+    display: block;
+    /* Asegura que las etiquetas ocupen toda la línea */
+    margin: 10px 0 5px;
+    /* Espaciado entre etiqueta y campo de entrada */
+    color: #555;
+    /* Color de las etiquetas */
 }
 
 .oblidcorreu input[type="email"],
 .oblidcorreu input[type="password"] {
-    width: 100%; /* Campo de entrada ocupa todo el ancho */
-    padding: 10px; /* Espaciado interno de los campos */
-    margin-bottom: 15px; /* Espaciado entre campos */
-    border: 1px solid #ccc; /* Bordes de los campos */
-    border-radius: 4px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
+    width: 100%;
+    /* Campo de entrada ocupa todo el ancho */
+    padding: 10px;
+    /* Espaciado interno de los campos */
+    margin-bottom: 15px;
+    /* Espaciado entre campos */
+    border: 1px solid #ccc;
+    /* Bordes de los campos */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    font-size: 16px;
+    /* Tamaño de la fuente */
 }
 
 .oblidcorreu button {
-    width: 100%; /* Botón ocupa todo el ancho */
-    padding: 10px; /* Espaciado interno del botón */
-    background-color: #28a745; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none; /* Sin bordes */
-    border-radius: 4px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    transition: background-color 0.3s; /* Efecto de transición en el color de fondo */
+    width: 100%;
+    /* Botón ocupa todo el ancho */
+    padding: 10px;
+    /* Espaciado interno del botón */
+    background-color: #28a745;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    /* Sin bordes */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s;
+    /* Efecto de transición en el color de fondo */
 }
 
 .oblidcorreu button:hover {
-    background-color: #218838; /* Color de fondo al pasar el ratón */
+    background-color: #218838;
+    /* Color de fondo al pasar el ratón */
 }
+
 .oblidcorreu {
-    display: block; /* Asegura que el div sea un bloque */
-    visibility: visible; /* Asegura que sea visible */
+    display: block;
+    /* Asegura que el div sea un bloque */
+    visibility: visible;
+    /* Asegura que sea visible */
 }
+
 .missatge-exit {
     color: green;
     font-weight: bold;
     margin-bottom: 20px;
 }
-.form-reestablir{
+
+.form-reestablir {
     display: block;
 }
-.veure_compres{
+
+.veure_compres {
     margin-top: 30px;
 }
- /* Estil per a la barra de cookies */
- .cookie-banner {
+
+/* Estil per a la barra de cookies */
+.cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -297,59 +372,86 @@ p a:hover {
 
 /*Inputs vista.formularilogin.php*/
 input[type="text"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
 
-input[type="text"]::placeholder{
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+input[type="text"]::placeholder {
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
 
 input[type="password"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
 
-input[type="password"]::placeholder{
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+input[type="password"]::placeholder {
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
+
 input[type="email"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
+
 input[type="email"]::placeholder {
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
+
 /*Estils de vista.veureCompres.php*/
 /* Contenidor principal per la pàgina de les compres */
 .veure-compres-container {
-    max-width: 800px;    
-    margin: 50px auto; /* Incrementa la distància de la capsa */
+    max-width: 800px;
+    margin: 50px auto;
+    /* Incrementa la distància de la capsa */
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding: 50px; /* Afegim padding intern per separar les taules de les vores */
+    padding: 50px;
+    /* Afegim padding intern per separar les taules de les vores */
     clear: both;
 }
 
 .table {
-    width: 90%; /* Redueix l'ample per no ocupar el 100% de la capsa */
-    margin: 20px auto; /* Centra la taula */
+    width: 90%;
+    /* Redueix l'ample per no ocupar el 100% de la capsa */
+    margin: 20px auto;
+    /* Centra la taula */
     border-collapse: collapse;
 }
 
 .total-preu-table {
-    width: 60%; /* Redueix l'ample per centrar la taula dins del contenidor */
-    margin: 20px auto; /* Centra la taula */
+    width: 60%;
+    /* Redueix l'ample per centrar la taula dins del contenidor */
+    margin: 20px auto;
+    /* Centra la taula */
     text-align: center;
 }
 
@@ -357,25 +459,37 @@ input[type="email"]::placeholder {
     text-align: center;
     margin-top: 20px;
 }
-.sheldon{
+
+.sheldon {
     width: 200px;
     height: 200px;
     text-align: center;
 }
-.oblit-container{
-    background: rgba(255, 255, 255, 0.8); /* Fons similar al contenidor del formulari */
-    padding: 50px;    
+
+.oblit-container {
+    background: rgba(255, 255, 255, 0.8);
+    /* Fons similar al contenidor del formulari */
+    padding: 50px;
     border-radius: 10px;
-    width: 200px; /* Amplada del contenidor */
+    width: 200px;
+    /* Amplada del contenidor */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    position: fixed; /* Posiciona la finestra al costat */
-    top: 30px; /* Ajusta l'espai superior */
-    right: 50px; /* Espai del costat dret */
-    text-align: left; /* Centra el text */
-    z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
-}/* Jonathan Lopez Ramos */
+    position: fixed;
+    /* Posiciona la finestra al costat */
+    top: 30px;
+    /* Ajusta l'espai superior */
+    right: 50px;
+    /* Espai del costat dret */
+    text-align: left;
+    /* Centra el text */
+    z-index: 1000;
+    /* Eleva el z-index per sobre d'altres elements */
+}
+
+/* Jonathan Lopez Ramos */
 /* Estils generals */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -389,40 +503,52 @@ body, html {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 20px;
-    width: 800px; /* Amplada fixa */
-    margin: 40px auto; /* Centrat horitzontal amb auto */
+    width: 800px;
+    /* Amplada fixa */
+    margin: 40px auto;
+    /* Centrat horitzontal amb auto */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    clear: both; /* Per assegurar que no s'encavalqui res a sobre */
+    clear: both;
+    /* Per assegurar que no s'encavalqui res a sobre */
 }
 
 /*Estils de títols*/
-h1, h2, h4 {
+h1,
+h2,
+h4 {
     text-align: center;
     margin: 10px 0;
 }
 
 /*Formulari*/
 form {
-    width: 100%; /* 100% de l'amplada del contenidor */
-    margin: 0 auto; /* Centrat */
-    clear: both; /* Evitar interferències */
+    width: 100%;
+    /* 100% de l'amplada del contenidor */
+    margin: 0 auto;
+    /* Centrat */
+    clear: both;
+    /* Evitar interferències */
 }
 
 label {
-    display: block; /* Força a cada label a ocupar una línia */
+    display: block;
+    /* Força a cada label a ocupar una línia */
     margin-top: 10px;
 }
 
-input[type="text"], textarea {
-    width: 95%; /* Aproximadament tota l'amplada del contenidor */
+input[type="text"],
+textarea {
+    width: 95%;
+    /* Aproximadament tota l'amplada del contenidor */
     padding: 10px;
     margin: 5px 0;
     border-radius: 4px;
     border: 1px solid #ccc;
-    float: none; /* Assegura que no hi hagi flotació aquí */
+    float: none;
+    /* Assegura que no hi hagi flotació aquí */
 }
 
-.enviardades{
+.enviardades {
     padding: 10px;
     margin-top: 10px;
     background-color: #28a745;
@@ -430,7 +556,8 @@ input[type="text"], textarea {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 98%; /* Ajusta l'amplada segons el contingut */
+    width: 98%;
+    /* Ajusta l'amplada segons el contingut */
     clear: both;
 }
 
@@ -440,10 +567,12 @@ input[type="text"], textarea {
 
 /* Estils de la taula */
 table {
-    width: 100%; /* Ocupa tot l'ample */
+    width: 100%;
+    /* Ocupa tot l'ample */
     border-collapse: collapse;
     margin-top: 20px;
-    float: none; /* Taula sense flotació */
+    float: none;
+    /* Taula sense flotació */
 }
 
 th {
@@ -451,7 +580,8 @@ th {
     color: white;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
@@ -463,6 +593,7 @@ th, td {
     margin-bottom: 20px;
     float: none;
 }
+
 /* Missatges */
 .message {
     text-align: center;
@@ -482,8 +613,10 @@ th, td {
 
 .paginacio form {
     display: inline-block;
-    text-align: center; /* Centra els botons dins del formulari */
-    white-space: nowrap; /* Manté els botons en una sola línia */
+    text-align: center;
+    /* Centra els botons dins del formulari */
+    white-space: nowrap;
+    /* Manté els botons en una sola línia */
 }
 
 .paginacio button {
@@ -496,7 +629,8 @@ th, td {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    vertical-align: middle; /* Alineació vertical dels botons */
+    vertical-align: middle;
+    /* Alineació vertical dels botons */
 }
 
 .paginacio button[disabled] {
@@ -517,15 +651,19 @@ th, td {
 .paginacio .anterior,
 .paginacio .seguent,
 .paginacio .numero {
-    display: inline-block; /* Assegura que tots els botons de la paginació es mostrin en línia */
+    display: inline-block;
+    /* Assegura que tots els botons de la paginació es mostrin en línia */
 }
-.register{
+
+.register {
     margin-left: 38%;
 }
-.login{
+
+.login {
     margin-top: 15px;
 }
-.simple{
+
+.simple {
     width: 30vw;
     padding-inline: 20px;
 }
@@ -550,99 +688,149 @@ p a:hover {
 
 /*Finestra de logout*/
 .logout-container {
-    background: rgba(255, 255, 255, 0.8); /* Fons similar al contenidor del formulari */
+    background: rgba(255, 255, 255, 0.8);
+    /* Fons similar al contenidor del formulari */
     padding: 20px;
     border-radius: 10px;
-    width: 200px; /* Amplada del contenidor */
+    width: 200px;
+    /* Amplada del contenidor */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    position: fixed; /* Posiciona la finestra al costat */
-    top: 30px; /* Ajusta l'espai superior */
-    right: 20px; /* Espai del costat dret */
-    text-align: left; /* Centra el text */
-    z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
+    position: fixed;
+    /* Posiciona la finestra al costat */
+    top: 30px;
+    /* Ajusta l'espai superior */
+    right: 20px;
+    /* Espai del costat dret */
+    text-align: left;
+    /* Centra el text */
+    z-index: 1000;
+    /* Eleva el z-index per sobre d'altres elements */
 }
-.form-logout{
+
+.form-logout {
     display: block;
 }
+
 .logout-button {
-    display: block; /* Assegura que el botó es mostri com un bloc */
-    background-color: red; /* Canvia temporalment el color de fons */
-    color: white; /* Canvia el color del text */
+    display: block;
+    /* Assegura que el botó es mostri com un bloc */
+    background-color: red;
+    /* Canvia temporalment el color de fons */
+    color: white;
+    /* Canvia el color del text */
     width: 80px;
     height: 25px;
 }
 
 
 .logout-button:hover {
-    background-color: #c82333; /* Color del botó en hover */
+    background-color: #c82333;
+    /* Color del botó en hover */
 }
-.form_compres{
+
+.form_compres {
     display: block;
 }
+
 /*Formulari Oblit correu*/
 .oblidcorreu {
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centra el formulario en la página */
-    padding: 20px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Bordes del formulario */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Color de fondo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    max-width: 400px;
+    /* Ancho máximo del formulario */
+    margin: 0 auto;
+    /* Centra el formulario en la página */
+    padding: 20px;
+    /* Espaciado interno */
+    border: 1px solid #ccc;
+    /* Bordes del formulario */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    background-color: #f9f9f9;
+    /* Color de fondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidad */
 }
 
 .oblidcorreu h1 {
-    text-align: center; /* Centra el título */
-    color: #333; /* Color del texto del título */
+    text-align: center;
+    /* Centra el título */
+    color: #333;
+    /* Color del texto del título */
 }
 
 .oblidcorreu label {
-    display: block; /* Asegura que las etiquetas ocupen toda la línea */
-    margin: 10px 0 5px; /* Espaciado entre etiqueta y campo de entrada */
-    color: #555; /* Color de las etiquetas */
+    display: block;
+    /* Asegura que las etiquetas ocupen toda la línea */
+    margin: 10px 0 5px;
+    /* Espaciado entre etiqueta y campo de entrada */
+    color: #555;
+    /* Color de las etiquetas */
 }
 
 .oblidcorreu input[type="email"],
 .oblidcorreu input[type="password"] {
-    width: 100%; /* Campo de entrada ocupa todo el ancho */
-    padding: 10px; /* Espaciado interno de los campos */
-    margin-bottom: 15px; /* Espaciado entre campos */
-    border: 1px solid #ccc; /* Bordes de los campos */
-    border-radius: 4px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
+    width: 100%;
+    /* Campo de entrada ocupa todo el ancho */
+    padding: 10px;
+    /* Espaciado interno de los campos */
+    margin-bottom: 15px;
+    /* Espaciado entre campos */
+    border: 1px solid #ccc;
+    /* Bordes de los campos */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    font-size: 16px;
+    /* Tamaño de la fuente */
 }
 
 .oblidcorreu button {
-    width: 100%; /* Botón ocupa todo el ancho */
-    padding: 10px; /* Espaciado interno del botón */
-    background-color: #28a745; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none; /* Sin bordes */
-    border-radius: 4px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    transition: background-color 0.3s; /* Efecto de transición en el color de fondo */
+    width: 100%;
+    /* Botón ocupa todo el ancho */
+    padding: 10px;
+    /* Espaciado interno del botón */
+    background-color: #28a745;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    /* Sin bordes */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s;
+    /* Efecto de transición en el color de fondo */
 }
 
 .oblidcorreu button:hover {
-    background-color: #218838; /* Color de fondo al pasar el ratón */
+    background-color: #218838;
+    /* Color de fondo al pasar el ratón */
 }
+
 .oblidcorreu {
-    display: block; /* Asegura que el div sea un bloque */
-    visibility: visible; /* Asegura que sea visible */
+    display: block;
+    /* Asegura que el div sea un bloque */
+    visibility: visible;
+    /* Asegura que sea visible */
 }
+
 .missatge-exit {
     color: green;
     font-weight: bold;
     margin-bottom: 20px;
 }
-.form-reestablir{
+
+.form-reestablir {
     display: block;
 }
-.veure_compres{
+
+.veure_compres {
     margin-top: 30px;
 }
- /* Estil per a la barra de cookies */
- .cookie-banner {
+
+/* Estil per a la barra de cookies */
+.cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -672,59 +860,86 @@ p a:hover {
 
 /*Inputs vista.formularilogin.php*/
 input[type="text"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
 
-input[type="text"]::placeholder{
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+input[type="text"]::placeholder {
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
 
 input[type="password"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
 
-input[type="password"]::placeholder{
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+input[type="password"]::placeholder {
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
+
 input[type="email"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
+
 input[type="email"]::placeholder {
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
+
 /*Estils de vista.veureCompres.php*/
 /* Contenidor principal per la pàgina de les compres */
 .veure-compres-container {
-    max-width: 800px;    
-    margin: 50px auto; /* Incrementa la distància de la capsa */
+    max-width: 800px;
+    margin: 50px auto;
+    /* Incrementa la distància de la capsa */
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding: 50px; /* Afegim padding intern per separar les taules de les vores */
+    padding: 50px;
+    /* Afegim padding intern per separar les taules de les vores */
     clear: both;
 }
 
 .table {
-    width: 90%; /* Redueix l'ample per no ocupar el 100% de la capsa */
-    margin: 20px auto; /* Centra la taula */
+    width: 90%;
+    /* Redueix l'ample per no ocupar el 100% de la capsa */
+    margin: 20px auto;
+    /* Centra la taula */
     border-collapse: collapse;
 }
 
 .total-preu-table {
-    width: 60%; /* Redueix l'ample per centrar la taula dins del contenidor */
-    margin: 20px auto; /* Centra la taula */
+    width: 60%;
+    /* Redueix l'ample per centrar la taula dins del contenidor */
+    margin: 20px auto;
+    /* Centra la taula */
     text-align: center;
 }
 
@@ -732,25 +947,37 @@ input[type="email"]::placeholder {
     text-align: center;
     margin-top: 20px;
 }
-.sheldon{
+
+.sheldon {
     width: 200px;
     height: 200px;
     text-align: center;
 }
-.oblit-container{
-    background: rgba(255, 255, 255, 0.8); /* Fons similar al contenidor del formulari */
-    padding: 50px;    
+
+.oblit-container {
+    background: rgba(255, 255, 255, 0.8);
+    /* Fons similar al contenidor del formulari */
+    padding: 50px;
     border-radius: 10px;
-    width: 200px; /* Amplada del contenidor */
+    width: 200px;
+    /* Amplada del contenidor */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    position: fixed; /* Posiciona la finestra al costat */
-    top: 30px; /* Ajusta l'espai superior */
-    right: 50px; /* Espai del costat dret */
-    text-align: left; /* Centra el text */
-    z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
-}/* Jonathan Lopez Ramos */
+    position: fixed;
+    /* Posiciona la finestra al costat */
+    top: 30px;
+    /* Ajusta l'espai superior */
+    right: 50px;
+    /* Espai del costat dret */
+    text-align: left;
+    /* Centra el text */
+    z-index: 1000;
+    /* Eleva el z-index per sobre d'altres elements */
+}
+
+/* Jonathan Lopez Ramos */
 /* Estils generals */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -764,40 +991,52 @@ body, html {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 20px;
-    width: 800px; /* Amplada fixa */
-    margin: 40px auto; /* Centrat horitzontal amb auto */
+    width: 800px;
+    /* Amplada fixa */
+    margin: 40px auto;
+    /* Centrat horitzontal amb auto */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    clear: both; /* Per assegurar que no s'encavalqui res a sobre */
+    clear: both;
+    /* Per assegurar que no s'encavalqui res a sobre */
 }
 
 /*Estils de títols*/
-h1, h2, h4 {
+h1,
+h2,
+h4 {
     text-align: center;
     margin: 10px 0;
 }
 
 /*Formulari*/
 form {
-    width: 100%; /* 100% de l'amplada del contenidor */
-    margin: 0 auto; /* Centrat */
-    clear: both; /* Evitar interferències */
+    width: 100%;
+    /* 100% de l'amplada del contenidor */
+    margin: 0 auto;
+    /* Centrat */
+    clear: both;
+    /* Evitar interferències */
 }
 
 label {
-    display: block; /* Força a cada label a ocupar una línia */
+    display: block;
+    /* Força a cada label a ocupar una línia */
     margin-top: 10px;
 }
 
-input[type="text"], textarea {
-    width: 95%; /* Aproximadament tota l'amplada del contenidor */
+input[type="text"],
+textarea {
+    width: 95%;
+    /* Aproximadament tota l'amplada del contenidor */
     padding: 10px;
     margin: 5px 0;
     border-radius: 4px;
     border: 1px solid #ccc;
-    float: none; /* Assegura que no hi hagi flotació aquí */
+    float: none;
+    /* Assegura que no hi hagi flotació aquí */
 }
 
-.enviardades{
+.enviardades {
     padding: 10px;
     margin-top: 10px;
     background-color: #28a745;
@@ -805,7 +1044,8 @@ input[type="text"], textarea {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 98%; /* Ajusta l'amplada segons el contingut */
+    width: 98%;
+    /* Ajusta l'amplada segons el contingut */
     clear: both;
 }
 
@@ -815,10 +1055,12 @@ input[type="text"], textarea {
 
 /* Estils de la taula */
 table {
-    width: 100%; /* Ocupa tot l'ample */
+    width: 100%;
+    /* Ocupa tot l'ample */
     border-collapse: collapse;
     margin-top: 20px;
-    float: none; /* Taula sense flotació */
+    float: none;
+    /* Taula sense flotació */
 }
 
 th {
@@ -826,7 +1068,8 @@ th {
     color: white;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
@@ -838,6 +1081,7 @@ th, td {
     margin-bottom: 20px;
     float: none;
 }
+
 /* Missatges */
 .message {
     text-align: center;
@@ -857,8 +1101,10 @@ th, td {
 
 .paginacio form {
     display: inline-block;
-    text-align: center; /* Centra els botons dins del formulari */
-    white-space: nowrap; /* Manté els botons en una sola línia */
+    text-align: center;
+    /* Centra els botons dins del formulari */
+    white-space: nowrap;
+    /* Manté els botons en una sola línia */
 }
 
 .paginacio button {
@@ -871,7 +1117,8 @@ th, td {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    vertical-align: middle; /* Alineació vertical dels botons */
+    vertical-align: middle;
+    /* Alineació vertical dels botons */
 }
 
 .paginacio button[disabled] {
@@ -892,15 +1139,19 @@ th, td {
 .paginacio .anterior,
 .paginacio .seguent,
 .paginacio .numero {
-    display: inline-block; /* Assegura que tots els botons de la paginació es mostrin en línia */
+    display: inline-block;
+    /* Assegura que tots els botons de la paginació es mostrin en línia */
 }
-.register{
+
+.register {
     margin-left: 38%;
 }
-.login{
+
+.login {
     margin-top: 15px;
 }
-.simple{
+
+.simple {
     width: 30vw;
     padding-inline: 20px;
 }
@@ -925,99 +1176,149 @@ p a:hover {
 
 /*Finestra de logout*/
 .logout-container {
-    background: rgba(255, 255, 255, 0.8); /* Fons similar al contenidor del formulari */
+    background: rgba(255, 255, 255, 0.8);
+    /* Fons similar al contenidor del formulari */
     padding: 20px;
     border-radius: 10px;
-    width: 200px; /* Amplada del contenidor */
+    width: 200px;
+    /* Amplada del contenidor */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    position: fixed; /* Posiciona la finestra al costat */
-    top: 30px; /* Ajusta l'espai superior */
-    right: 20px; /* Espai del costat dret */
-    text-align: left; /* Centra el text */
-    z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
+    position: fixed;
+    /* Posiciona la finestra al costat */
+    top: 30px;
+    /* Ajusta l'espai superior */
+    right: 20px;
+    /* Espai del costat dret */
+    text-align: left;
+    /* Centra el text */
+    z-index: 1000;
+    /* Eleva el z-index per sobre d'altres elements */
 }
-.form-logout{
+
+.form-logout {
     display: block;
 }
+
 .logout-button {
-    display: block; /* Assegura que el botó es mostri com un bloc */
-    background-color: red; /* Canvia temporalment el color de fons */
-    color: white; /* Canvia el color del text */
+    display: block;
+    /* Assegura que el botó es mostri com un bloc */
+    background-color: red;
+    /* Canvia temporalment el color de fons */
+    color: white;
+    /* Canvia el color del text */
     width: 80px;
     height: 25px;
 }
 
 
 .logout-button:hover {
-    background-color: #c82333; /* Color del botó en hover */
+    background-color: #c82333;
+    /* Color del botó en hover */
 }
-.form_compres{
+
+.form_compres {
     display: block;
 }
+
 /*Formulari Oblit correu*/
 .oblidcorreu {
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centra el formulario en la página */
-    padding: 20px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Bordes del formulario */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Color de fondo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    max-width: 400px;
+    /* Ancho máximo del formulario */
+    margin: 0 auto;
+    /* Centra el formulario en la página */
+    padding: 20px;
+    /* Espaciado interno */
+    border: 1px solid #ccc;
+    /* Bordes del formulario */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    background-color: #f9f9f9;
+    /* Color de fondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidad */
 }
 
 .oblidcorreu h1 {
-    text-align: center; /* Centra el título */
-    color: #333; /* Color del texto del título */
+    text-align: center;
+    /* Centra el título */
+    color: #333;
+    /* Color del texto del título */
 }
 
 .oblidcorreu label {
-    display: block; /* Asegura que las etiquetas ocupen toda la línea */
-    margin: 10px 0 5px; /* Espaciado entre etiqueta y campo de entrada */
-    color: #555; /* Color de las etiquetas */
+    display: block;
+    /* Asegura que las etiquetas ocupen toda la línea */
+    margin: 10px 0 5px;
+    /* Espaciado entre etiqueta y campo de entrada */
+    color: #555;
+    /* Color de las etiquetas */
 }
 
 .oblidcorreu input[type="email"],
 .oblidcorreu input[type="password"] {
-    width: 100%; /* Campo de entrada ocupa todo el ancho */
-    padding: 10px; /* Espaciado interno de los campos */
-    margin-bottom: 15px; /* Espaciado entre campos */
-    border: 1px solid #ccc; /* Bordes de los campos */
-    border-radius: 4px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
+    width: 100%;
+    /* Campo de entrada ocupa todo el ancho */
+    padding: 10px;
+    /* Espaciado interno de los campos */
+    margin-bottom: 15px;
+    /* Espaciado entre campos */
+    border: 1px solid #ccc;
+    /* Bordes de los campos */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    font-size: 16px;
+    /* Tamaño de la fuente */
 }
 
 .oblidcorreu button {
-    width: 100%; /* Botón ocupa todo el ancho */
-    padding: 10px; /* Espaciado interno del botón */
-    background-color: #28a745; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none; /* Sin bordes */
-    border-radius: 4px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    transition: background-color 0.3s; /* Efecto de transición en el color de fondo */
+    width: 100%;
+    /* Botón ocupa todo el ancho */
+    padding: 10px;
+    /* Espaciado interno del botón */
+    background-color: #28a745;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    /* Sin bordes */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s;
+    /* Efecto de transición en el color de fondo */
 }
 
 .oblidcorreu button:hover {
-    background-color: #218838; /* Color de fondo al pasar el ratón */
+    background-color: #218838;
+    /* Color de fondo al pasar el ratón */
 }
+
 .oblidcorreu {
-    display: block; /* Asegura que el div sea un bloque */
-    visibility: visible; /* Asegura que sea visible */
+    display: block;
+    /* Asegura que el div sea un bloque */
+    visibility: visible;
+    /* Asegura que sea visible */
 }
+
 .missatge-exit {
     color: green;
     font-weight: bold;
     margin-bottom: 20px;
 }
-.form-reestablir{
+
+.form-reestablir {
     display: block;
 }
-.veure_compres{
+
+.veure_compres {
     margin-top: 30px;
 }
- /* Estil per a la barra de cookies */
- .cookie-banner {
+
+/* Estil per a la barra de cookies */
+.cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -1047,59 +1348,86 @@ p a:hover {
 
 /*Inputs vista.formularilogin.php*/
 input[type="text"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
 
-input[type="text"]::placeholder{
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+input[type="text"]::placeholder {
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
 
 input[type="password"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
 
-input[type="password"]::placeholder{
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+input[type="password"]::placeholder {
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
+
 input[type="email"] {
-    width: 98%; /* Ajusta a la mida del contenidor */
-    padding: 5px; /* Afegir espai intern */
-    box-sizing: border-box; /* Inclou el padding en el càlcul de l'amplada total */
+    width: 98%;
+    /* Ajusta a la mida del contenidor */
+    padding: 5px;
+    /* Afegir espai intern */
+    box-sizing: border-box;
+    /* Inclou el padding en el càlcul de l'amplada total */
 }
+
 input[type="email"]::placeholder {
-    font-size: 10px; /* Canvia la mida a la que desitgis */
-    color: #888; /* Color del text del placeholder */
-    opacity: 1; /* Fa que el placeholder sigui completament opac */
+    font-size: 10px;
+    /* Canvia la mida a la que desitgis */
+    color: #888;
+    /* Color del text del placeholder */
+    opacity: 1;
+    /* Fa que el placeholder sigui completament opac */
 }
+
 /*Estils de vista.veureCompres.php*/
 /* Contenidor principal per la pàgina de les compres */
 .veure-compres-container {
-    max-width: 800px;    
-    margin: 50px auto; /* Incrementa la distància de la capsa */
+    max-width: 800px;
+    margin: 50px auto;
+    /* Incrementa la distància de la capsa */
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding: 50px; /* Afegim padding intern per separar les taules de les vores */
+    padding: 50px;
+    /* Afegim padding intern per separar les taules de les vores */
     clear: both;
 }
 
 .table {
-    width: 90%; /* Redueix l'ample per no ocupar el 100% de la capsa */
-    margin: 20px auto; /* Centra la taula */
+    width: 90%;
+    /* Redueix l'ample per no ocupar el 100% de la capsa */
+    margin: 20px auto;
+    /* Centra la taula */
     border-collapse: collapse;
 }
 
 .total-preu-table {
-    width: 60%; /* Redueix l'ample per centrar la taula dins del contenidor */
-    margin: 20px auto; /* Centra la taula */
+    width: 60%;
+    /* Redueix l'ample per centrar la taula dins del contenidor */
+    margin: 20px auto;
+    /* Centra la taula */
     text-align: center;
 }
 
@@ -1107,31 +1435,43 @@ input[type="email"]::placeholder {
     text-align: center;
     margin-top: 20px;
 }
-.sheldon{
+
+.sheldon {
     width: 200px;
     height: 200px;
     text-align: center;
 }
-.oblit-container{
-    background: rgba(255, 255, 255, 0.8); /* Fons similar al contenidor del formulari */
-    padding: 50px;    
+
+.oblit-container {
+    background: rgba(255, 255, 255, 0.8);
+    /* Fons similar al contenidor del formulari */
+    padding: 50px;
     border-radius: 10px;
-    width: 200px; /* Amplada del contenidor */
+    width: 200px;
+    /* Amplada del contenidor */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    position: fixed; /* Posiciona la finestra al costat */
-    top: 30px; /* Ajusta l'espai superior */
-    right: 50px; /* Espai del costat dret */
-    text-align: left; /* Centra el text */
-    z-index: 1000; /* Eleva el z-index per sobre d'altres elements */
+    position: fixed;
+    /* Posiciona la finestra al costat */
+    top: 30px;
+    /* Ajusta l'espai superior */
+    right: 50px;
+    /* Espai del costat dret */
+    text-align: left;
+    /* Centra el text */
+    z-index: 1000;
+    /* Eleva el z-index per sobre d'altres elements */
 }
+
 .amaga {
     display: none;
 }
+
 .imatges-perfil {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
+
 /*Part de les imatges corresponents per escollir*/
 .imatges-perfil label {
     display: flex;
@@ -1140,18 +1480,20 @@ input[type="email"]::placeholder {
     cursor: pointer;
 }
 
-.imatge-opcio{
+.imatge-opcio {
     width: 10%;
     height: 10%;
     border-radius: 100%;
     text-align: center;
 }
-.avatar{
+
+.avatar {
     width: 20%;
     height: 20%;
     border-radius: 100%;
     text-align: center;
 }
+
 /* Estil per al contenidor del desplegable */
 .dropdown {
     position: relative;
@@ -1174,7 +1516,8 @@ input[type="email"]::placeholder {
 }
 
 .dropdown-menu {
-    display: none; /* Amaga el menú per defecte */
+    display: none;
+    /* Amaga el menú per defecte */
     position: absolute;
     background-color: #f4f4f4;
     border: 1px solid #ccc;

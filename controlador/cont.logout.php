@@ -15,4 +15,3 @@ setcookie(session_name(), '', time() - 3600, '/');
 // Redirigir a la pàgina de login
 $_SESSION['missatgeError'] = "Has sortit correctament.";
 header('Location: ../vista/vista.formulariLogin.php');
-?>

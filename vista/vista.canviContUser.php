@@ -3,12 +3,12 @@
 session_start();
 
 //CONTROL MISSATGES D'ERRORS
-    //Recuperacio de dos missatges, un d'error i un altre de missatges correctes, on es càrregara a la variable el missatge que arriba del fitcher processar.php
-    $missatgeError = isset($_SESSION['missatgeError']) ? $_SESSION['missatgeError'] : '';
-    $missatgeCorrecte = isset($_SESSION['missatgeCorrecte']) ? $_SESSION['missatgeCorrecte'] : '';
+//Recuperacio de dos missatges, un d'error i un altre de missatges correctes, on es càrregara a la variable el missatge que arriba del fitcher processar.php
+$missatgeError = isset($_SESSION['missatgeError']) ? $_SESSION['missatgeError'] : '';
+$missatgeCorrecte = isset($_SESSION['missatgeCorrecte']) ? $_SESSION['missatgeCorrecte'] : '';
 
-    //Una vegada carregat a la variable esborrem les dades que tenim al $_SESSION per tal de que si recarreguem de nou no carregui una dada anterior.
-    unset($_SESSION['missatgeError'], $_SESSION['missatgeCorrecte']);
+//Una vegada carregat a la variable esborrem les dades que tenim al $_SESSION per tal de que si recarreguem de nou no carregui una dada anterior.
+unset($_SESSION['missatgeError'], $_SESSION['missatgeCorrecte']);
 
 if (!isset($_SESSION['usuari_id'])) {
     header('Location: ../vista/vista.formulariLogin.php');
@@ -20,25 +20,26 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
 ?>
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estils.css">
     <title>Canvi de Contrasenya</title>
 </head>
+
 <body>
     <!-- Finestra de Logout -->
     <div class="logout-container">
         <h2>Usuari Actiu</h2>
         <p><?php echo htmlspecialchars($_SESSION['nom_usuari']); ?></p>
         <!-- Avatar de l'usuari -->
-        <img 
-            src="<?php echo htmlspecialchars('../'. $_SESSION['imatge_perfil'] ?? '../imgPerfils/default.jpg'); ?>" 
-            alt="Imatge de perfil"        
-            class="avatar"
-        >    
+        <img
+            src="<?php echo htmlspecialchars('../' . $_SESSION['imatge_perfil'] ?? '../imgPerfils/default.jpg'); ?>"
+            alt="Imatge de perfil"
+            class="avatar">
         <!-- Afegim els missatges d'errors amb la variale creada anteriorment, que ens porta l'error desde el document processar.php-->
-        <?php if (!empty($missatgeError)): ?>        
+        <?php if (!empty($missatgeError)): ?>
             <h4 class="message" style="color: red;">
                 <!--Si el missatge rebut es un array mostra els diferents errors, si no, mostra el missatge-->
                 <?php echo is_array($missatgeError) ? htmlspecialchars($missatgeError['error']) : htmlspecialchars($missatgeError); ?>
@@ -48,11 +49,11 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
         <?php if (!empty($missatgeCorrecte)): ?>
             <h4 class="message" style="color: blue;">
                 <?php echo is_array($missatgeCorrecte) ? htmlspecialchars($missatgeCorrecte['aconseguit']) : htmlspecialchars($missatgeCorrecte); ?>
-            </h4>       
+            </h4>
         <?php endif; ?>
         <div class="dropdown">
-        <!-- Títol del desplegable -->
-        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+            <!-- Títol del desplegable -->
+            <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
             <!-- Opcions del menú -->
             <div class="dropdown-menu">
                 <!-- Mostra l'opció Administra Usuaris només si l'usuari és administrador -->
@@ -80,11 +81,12 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
         </form>
     </div>
 </body>
+
 </html>
 <script>
-// Funció per obrir i tancar el menú desplegable
-function toggleDropdown() {
-    const dropdown = document.querySelector('.dropdown');
-    dropdown.classList.toggle('open');
-}
+    // Funció per obrir i tancar el menú desplegable
+    function toggleDropdown() {
+        const dropdown = document.querySelector('.dropdown');
+        dropdown.classList.toggle('open');
+    }
 </script>

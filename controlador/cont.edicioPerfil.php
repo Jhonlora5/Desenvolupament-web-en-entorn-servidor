@@ -3,7 +3,7 @@ require_once '../model/model.edicioPerfil.php';
 
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST'&& (isset($_POST['nom']) || isset($_POST['img_perfil']))) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['nom']) || isset($_POST['img_perfil']))) {
     $nouNom = trim($_POST['nom'] ?? '');
     $novaImatgeId = trim($_POST['img_perfil'] ?? '');
 
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'&& (isset($_POST['nom']) || isset($_POS
     try {
         // Obtenir imatges disponibles i verificar si la imatge seleccionada és vàlida
         $imatgesDisponibles = obtenirImatgesPerfils();
-        $imatgeSeleccionada = array_filter($imatgesDisponibles, function($imatge) use ($novaImatgeId) {
+        $imatgeSeleccionada = array_filter($imatgesDisponibles, function ($imatge) use ($novaImatgeId) {
             return $imatge['id_imatge'] == $novaImatgeId;
         });
 
@@ -42,4 +42,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'&& (isset($_POST['nom']) || isset($_POS
     header("Location: ../vista/vista.edicioPerfil.php");
     exit();
 }
-?>

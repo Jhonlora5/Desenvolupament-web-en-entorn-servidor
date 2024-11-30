@@ -37,8 +37,7 @@ $email = $_SESSION['dadesForm']['email'] ?? '';
 //Elimina els missatges de la sessió perquè no es mostrin repetidament
 unset($_SESSION['dadesForm']);
 
-//print_r($nom);
-//print_r($email);
+
 //POLÍTICA DE COOKIES
 //Verifica si l'usuari ha acceptat les cookies
 $cookiesAcceptades = isset($_COOKIE['acceptaCookies']) ? true : false;
@@ -70,20 +69,15 @@ if (isset($_SESSION['nom_usuari'])) {
 $usuariAutenticat = isset($_SESSION['usuari_id']);
 if ($usuariAutenticat) {
     // Aquí pots incloure la vista/logica que mostra el contingut per a usuaris autenticats
-    header('Location: vista.formulari.php'); 
+    header('Location: vista.formulari.php');
     exit;
 }
-//Mostrar la informació de l'usuari, si està autenticat
-//if (isset($_SESSION['nom_usuari'])) {
-//    echo "Benvingut, " . htmlspecialchars($_SESSION['nom_usuari']);
-//} else {
-//    echo "No s'ha iniciat cap sessió.";
-//}
+
 //creem una variable per tal de mostrar o no els enllaços corresponents a vista.administrador.php
 $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['nivell_administrador'] == 1);
 ?>
 <script>
-    // Funció per obrir i tancar el menú desplegable
+    // Funció per obrir i tancar el menú desplegable d'acces a les diverses pàgines.
     function toggleDropdown() {
         const dropdown = document.querySelector('.dropdown');
         dropdown.classList.toggle('open');
@@ -115,7 +109,7 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
     <!-- Finestra de Logout -->
     <div class="logout-container">
         <h2>Benvingut/da!</h2>
-        
+
         <!-- Afegim els missatges d'errors amb la variale creada anteriorment, que ens porta l'error desde el document processar.php-->
         <?php if (!empty($missatgeError)): ?>
             <h4 class="message" style="color: red;">

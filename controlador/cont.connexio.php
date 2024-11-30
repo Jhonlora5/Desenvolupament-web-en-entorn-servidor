@@ -8,7 +8,8 @@ session_set_cookie_params(2400);
 
 session_start();
 
-function obtenirConnexio(){
+function obtenirConnexio()
+{
     //Variables de connexió a la base de dades
     //IP o localització de la base de dades.
     $host = 'localhost';
@@ -25,11 +26,12 @@ function obtenirConnexio(){
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     } catch (PDOException $e) {
-        return ['error'=> "Error al connectar a la base de dades: " . $e->getMessage()];
+        return ['error' => "Error al connectar a la base de dades: " . $e->getMessage()];
     }
 }
 // Funció per verificar si la sessió ha expirat
-function verificarInactivitat() {
+function verificarInactivitat()
+{
     $tempsInactivitatMaxim = 2400; // 40 minuts en segons
 
     //Si la sessió existeix, verifiquem el temps d'inactivitat
@@ -38,7 +40,7 @@ function verificarInactivitat() {
 
         //Si el temps inactiu és superior al màxim, tanca la sessió i redirigeix
         if ($tempsInactiu > $tempsInactivitatMaxim) {
-            $missatgeError="El teu temps de sessió ha caducat per inactivitat.";  //Defineix la variable amb el missatge d'error
+            $missatgeError = "El teu temps de sessió ha caducat per inactivitat.";  //Defineix la variable amb el missatge d'error
             $_SESSION['missatgeError'] = $missatgeError;  //Defineix el missatge d'error
             session_unset();  // Elimina totes les variables de sessió
             session_destroy();  // Destrueix la sessió
@@ -52,5 +54,3 @@ function verificarInactivitat() {
 }
 //Crida a la funció.
 verificarInactivitat();
-
-?>
