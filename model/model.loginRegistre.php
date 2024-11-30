@@ -91,17 +91,34 @@ function manejarRegistre($nom, $email, $password, $confirmPassword, $pdo) {
 
 // Funció per manejar el login
 function manejarLogin($email, $password, $pdo, $keyServer) {
+    // Inicialitza els intents fallits si no existeix
+    if (!isset($_SESSION['intents_fallits'])) {
+        $_SESSION['intents_fallits'] = 0;
+    }
+
     $usuari = verificarUsuariPerEmail($email, $pdo);
 
     // Comprovem si l'usuari existeix i si la contrasenya és correcta
     if (!$usuari || !password_verify($password, $usuari['contrasenya'])) {
+        // Incrementa els intents fallits
+        $_SESSION['intents_fallits']++;
+
+        // Mostra un missatge d'error
         $_SESSION['missatgeError'] = "Correu electrònic o contrasenya incorrecta.";
+
+        // Redirigeix a la pàgina de login
         header('Location: ../vista/vista.formulariLogin.php');
         exit;
     }
 
     // Comprovació de intents fallits i reCAPTCHA
     if ($_SESSION['intents_fallits'] >= 3) {
+        if (!isset($_POST['g-recaptcha-response']) || empty($_POST['g-recaptcha-response'])) {
+            $_SESSION['missatgeError'] = "Per continuar, completa el reCAPTCHA.";
+            header('Location: ../vista/vista.formulariLogin.php');
+            exit;
+        }
+
         $recaptchaResponse = $_POST['g-recaptcha-response'];
         $verificaResposta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$keyServer&response=$recaptchaResponse");
         $verificaDades = json_decode($verificaResposta);
@@ -118,7 +135,14 @@ function manejarLogin($email, $password, $pdo, $keyServer) {
     $_SESSION['nom_usuari'] = $usuari['nom'];
     $_SESSION['nivell_administrador'] = $usuari['nivell_administrador'];
     $_SESSION['imatge_perfil'] = $usuari['ruta_imatge'];
+
+    // Restableix els intents fallits a 0
+    $_SESSION['intents_fallits'] = 0;
+
+    // Gestiona el token "Recorda'm" si cal
     gestionarTokenRecorda($usuari, $pdo);
+
+    // Mostra un missatge d'èxit
     $_SESSION['missatgeCorrecte'] = "Sessió iniciada correctament!";
     header('Location: ../vista/vista.formulari.php');
     exit;

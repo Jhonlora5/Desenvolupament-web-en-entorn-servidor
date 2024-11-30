@@ -160,6 +160,9 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
                 <p class="forgot-password"><a href="/vista/vista.oblit.php">He oblidat la meva contrasenya</a></p>
             </form>
 
+            <!-- Afegir el script de reCAPTCHA -->
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
             <div class="social-login">
                 <p>O inicia sessió amb:</p>
                 <a href="../controlador/cont.googleAuth.php">
@@ -170,8 +173,7 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
                 </a>
             </div>
 
-            <!-- Afegir el script de reCAPTCHA -->
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+            
             <a href="http://localhost/politica-privadesa.php">Política de Privadesa</a>
             <!-- Formulari de Registre -->
             <form id="registerForm" action="/controlador/cont.loginRegistre.php" method="POST">
