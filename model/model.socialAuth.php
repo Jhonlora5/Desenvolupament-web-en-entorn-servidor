@@ -82,7 +82,7 @@ function processarUsuariGoogle($email, $nom, $socialId, $token, $imatgeURL, $pdo
         $usuari = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($usuari) {
-            // Si existeix, actualitza el token
+            // Si l'usuari existeix, actualitza només el token
             $stmt = $pdo->prepare('UPDATE usuaris_socials 
                                    SET token = :token 
                                    WHERE social_id = :social_id AND provider = :provider');
@@ -97,12 +97,25 @@ function processarUsuariGoogle($email, $nom, $socialId, $token, $imatgeURL, $pdo
             return;
         }
 
-        // Si no existeix, registra el nou usuari i assigna-li la imatge
+        // Si l'usuari no existeix, registra el nou usuari i assigna-li la imatge
         $imatgeId = null;
+
+        // Comprova si la URL de la imatge és vàlida
         if (!empty($imatgeURL)) {
-            $stmt = $pdo->prepare('INSERT INTO imatges_perfil (ruta) VALUES (:ruta)');
+            // Comprova si ja existeix aquesta URL a la taula imatges_perfil
+            $stmt = $pdo->prepare('SELECT id_imatge FROM imatges_perfil WHERE ruta = :ruta');
             $stmt->execute(['ruta' => $imatgeURL]);
-            $imatgeId = $pdo->lastInsertId();
+            $imatge = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($imatge) {
+                // Si la imatge ja existeix, assigna el seu ID
+                $imatgeId = $imatge['id_imatge'];
+            } else {
+                // Si la imatge no existeix, crea-la
+                $stmt = $pdo->prepare('INSERT INTO imatges_perfil (ruta) VALUES (:ruta)');
+                $stmt->execute(['ruta' => $imatgeURL]);
+                $imatgeId = $pdo->lastInsertId();
+            }
         }
 
         // Insereix el nou usuari a la taula usuaris

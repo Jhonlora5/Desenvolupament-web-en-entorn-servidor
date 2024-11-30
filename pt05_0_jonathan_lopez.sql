@@ -65,6 +65,17 @@ CREATE TABLE imatges_perfil (
     ruta VARCHAR(255) NOT NULL UNIQUE DEFAULT '../imgPerfils/default.jpg'
 );
 
+-- Creacio de la taula d'usuaris socials
+CREATE TABLE usuaris_socials (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuari_id INT NOT NULL,
+    provider VARCHAR(255) NOT NULL,
+    social_id VARCHAR(255) NOT NULL,
+    token VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuari_id) REFERENCES usuaris(id_usuari)
+);
+
 -- Inserir imatges predefinides a la taula
 INSERT INTO imatges_perfil (ruta) 
 VALUES 
