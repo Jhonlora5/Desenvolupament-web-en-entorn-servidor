@@ -174,7 +174,7 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
             </div>
 
             
-            <a href="http://localhost/politica-privadesa.php">Política de Privadesa</a>
+            <a href="http://localhost/vista/vista.politica-privadesa.php">Política de Privadesa</a>
             <!-- Formulari de Registre -->
             <form id="registerForm" action="/controlador/cont.loginRegistre.php" method="POST">
                 <label for="nom">Nom</label>
