@@ -6,7 +6,7 @@
 require '../controlador/cont.processar.php';
 //echo file_exists('controlador/model.processar.php') ? 'Arxiu trobat' : 'Arxiu no trobat';
 require_once '../reCaptchaKeys/keys.autoload.php';
-
+session_start();
 //Verificar si hi ha algun error en la connexió per la crida a model.processar.php que ja conté la crida a cont.connexio.php
 if (is_array($pdo) && isset($pdo['error'])) {
     //Mostrar error en cas de fallada de connexió(Rectificacio d'errors).
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acceptaCookies'])) {
     header("Location: vista.formulariLogin.php");
     exit();
 }
-$mostrarRecaptcha = isset($_SESSION['intents_fallits']) && $_SESSION['intents_fallits'] > 3;
+$mostrarRecaptcha = isset($_SESSION['intents_fallits']) && $_SESSION['intents_fallits'] > 2;
 
 //Càrrega de variables amb el codi Recaptcha
 $keyRecaptcha = $_SESSION['key-client'];
