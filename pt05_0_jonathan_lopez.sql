@@ -23,11 +23,13 @@ CREATE TABLE articles (
 
 CREATE TABLE usuaris (
     id_usuari INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR (100) NOT NULL,
+    nom VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     contrasenya VARCHAR(255) NOT NULL,
     data_registre TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    nivell_administrador INT DEFAULT 2
+    nivell_administrador INT DEFAULT 2,
+    id_imatge INT DEFAULT 2,
+    CONSTRAINT fk_usuari_imatge FOREIGN KEY (id_imatge) REFERENCES imatges_perfil(id_imatge)
 );
 
 CREATE TABLE recuperacio_contrasenya (
@@ -73,10 +75,6 @@ VALUES
 ('imgPerfils/senyor.png'),
 ('imgPerfils/senyorCanas.png');
 
--- Afegir una columna a la taula usuaris per enllaçar amb la imatge
-ALTER TABLE usuaris 
-ADD COLUMN id_imatge INT DEFAULT NULL,
-ADD CONSTRAINT fk_usuari_imatge FOREIGN KEY (id_imatge) REFERENCES imatges_perfil(id_imatge);
 
 
 -- Inserció de dades a la taula articles.
@@ -108,4 +106,3 @@ VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP
 INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador)
 VALUES ('Gabriel', 'gabrielgusman@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 2, 2);
 
-USE pt05_jonathan_lopez;
