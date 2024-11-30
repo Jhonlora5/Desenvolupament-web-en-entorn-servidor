@@ -104,8 +104,8 @@ INSERT INTO articles (nom, cos, img_path, quantitat_disponible, preu) VALUES
 ('Cíndria', 'La síndria és una fruita refrescant i gran amb una polpa vermella i dolça plena d’aigua.', '../img/cindria.jpg', 60, 5);
 
 INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador) 
-VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 1);
+VALUES ('Jonathan', 'jhonlopezramos@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 1, 2);
 INSERT INTO usuaris (nom, email, contrasenya, nivell_administrador)
-VALUES ('Gabriel', 'gabrielgusman@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 2);
+VALUES ('Gabriel', 'gabrielgusman@gmail.com', '$2y$10$Rx78AjyJDCzvrafEfmeSSOrP1DeQbpAJ3ZiVwNfW9rbB/ZfuBi3HO', 2, 2);
 
 USE pt05_jonathan_lopez;
