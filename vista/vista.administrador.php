@@ -59,7 +59,7 @@ if ($_SESSION['nivell_administrador'] != 1) {
         
     <div class="dropdown">
         <!-- Títol del desplegable -->
-        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+        <div class="dropdown-toggle" onclick="toggleDropdown()">Torna a comprar</div>
             <!-- Opcions del menú -->
             <div class="dropdown-menu">
                 <a href="../vista/vista.edicioPerfil.php">Edita el teu perfil</a>

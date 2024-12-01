@@ -65,7 +65,7 @@ $amagaVeureCompres = !(isset($_SESSION['nivell_administrador']) && $_SESSION['ni
    
     <div class="dropdown">
         <!-- Títol del desplegable -->
-        <div class="dropdown-toggle" onclick="toggleDropdown()">Edita el teu perfil</div>
+        <div class="dropdown-toggle" onclick="toggleDropdown()">Torna a comprar</div>
             <!-- Opcions del menú -->
             <div class="dropdown-menu">
                 <!-- Mostra l'opció Administra Usuaris només si l'usuari és administrador -->
